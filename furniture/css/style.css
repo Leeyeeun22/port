@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap');
+
+/* reset */
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+:root{
+    --main-color:#9a8d78;
+    --sub-color:#f4f1ec; 
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+html{
+    overflow-x: hidden;
+    letter-spacing: -1px;
+}
+
+.inner{
+    max-width: 1200px;
+    padding:2rem 3rem;
+    margin: 0 auto;
+}
+
+.heading{
+    font-size: 1.4rem;
+    margin-top: 8rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.heading span{
+    color:var(--main-color);
+    font-size: 1.1rem;
+    text-transform:none;
+}
+
+/* 버튼 */
+#menu-btn{
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.btn{
+    color:white;
+    border:1px solid white;
+    font-size: 1.2rem;
+    padding:0 1rem;
+    width:7rem;
+    text-align: center;
+    margin-top:2rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color:var(--main-color);
+}
+
+.con_btn{
+    color:var(--main-color);
+    border:1px solid var(--main-color);
+    font-size: 1.3rem;
+    padding:.4rem 1rem;
+    width:8rem;
+    text-align: center;
+    margin:3rem auto;
+}
+.con_btn:hover{
+    cursor: pointer;
+    background-color: var(--main-color);
+    color:white;
+}
+
+/* header */
+#header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    z-index: 99;
+}
+
+#header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:5rem;
+
+}
+
+#header .logo a{
+    font-size: 2rem;
+    color:white;
+}
+
+/* nav */
+.nav li {
+    display: inline-block;
+    margin-right: 2rem;
+    text-transform: capitalize;
+}
+
+.nav li a {
+    width: 100%;
+    font-size: 1.1rem;
+    color:white;
+}
+
+.nav .active li a{
+    color:black;
+}
+
+.nav li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    /* 애니메이션 적용 */
+    height: 0.1rem;
+    background-color: var(--main-color);
+    transition: width .5s;
+    /* 애니메이션 */
+}
+
+.nav li a:hover::after {
+    width: 100%;
+    /* 애니메이션 적용 */
+}
+
+.nav li a:hover {
+    color: var(--main-color);
+}
+/* mobile menu */
+.mb_menu.active{
+    left:0;
+
+}
+
+.mb_menu{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left:-100%; top:0; bottom:0;
+    background-color: rgba(245, 245, 245, 0.8);
+    z-index: 9999;
+    text-align: center;
+    padding:2rem;
+}
+
+
+.mb_menu ul{
+    position: absolute;
+    left:0; top:50%;
+    transform: translateY(-50%);
+    width:100%;
+}
+
+.mb_menu li a{
+    width:100%;
+    padding:2rem;
+    font-size: 1.5rem;
+    color:black;
+    display: block;
+}
+
+.mb_menu li a:hover{
+    font-weight: bold;
+    background-color: rgb(226, 226, 226);
+}
+
+#mb_menu-btn{
+    text-align: right;
+    font-size: 2.5rem;
+    width:100%;
+    cursor: pointer;
+}
+
+
+/* banner */
+.banner{
+    width:100%;
+    height:40rem;
+    padding:0;
+    background-image: url('../img/slide_img.png');
+    background-size: cover;
+}
+
+.banner .banner_txt{
+    position: absolute;
+    left:20%; top:30%;
+    line-height: 2.3;
+    color:white;
+}
+
+.banner .banner_txt h2{
+    font-size: 3.2rem;
+}
+
+.banner .banner_txt p{
+    font-size: 1.2rem;
+}
+
+/* best */
+.tab_menu{
+    margin-top: 2rem;
+}
+
+.tab_menu .tabnav{
+    font-size: 0;
+    text-align: right;
+    padding-right:5rem;
+}
+.tab_menu .tabnav li{
+    display: inline-block;
+}
+
+.tab_menu .tabnav li a{
+    font-size: 1.3rem;
+    text-align: center;
+    padding:.5rem 1.3rem;
+    color:black;
+}
+
+.tab_menu .tabnav li a:hover{
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+.tabcontent{
+    margin-top: 3rem;
+}
+
+.tabcontent #tab01, .tabcontent #tab02{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* about */
+.about{
+    background-color: var(--sub-color);
+    margin-top: 5rem;
+}
+
+.about-container{
+    max-width: 1200px;
+    margin:auto;
+}
+.about-container .box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:5rem;
+    padding:6rem 5rem;
+}
+
+.about-container .box:last-child{
+    flex-direction: row-reverse;
+}
+
+.about-container .box h3{
+    font-size: 2rem;
+    line-height: 5;
+}
+
+.about-container .box p{
+    line-height: 3;
+    font-size: 1.1rem;
+}
+
+.about-container .box img{
+    height:30rem;
+}
+
+/* banner */
+
+.grid-banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:.5rem;
+    width:100%;
+    height:40rem;
+    padding:3rem 5rem;
+}
+
+.grid{
+    position: relative;
+    width:100%;
+}
+
+.grid:hover .all_txt{
+    display: block;
+    cursor: pointer;
+}
+
+.grid .all_txt{
+    position: absolute;
+    left: 0; top:0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height:100%;
+    text-align: center;
+    display: none;
+}
+
+.grid .all_txt span{
+    color:white;
+    position: absolute;
+    left:50%; top:50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
+}
+.grid img{
+    width:100%;
+    height:100%;
+}
+
+.grid:nth-child(1){
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.grid:nth-child(4){
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+/* fix_bg */
+.fix_bg{
+    width:100%;
+    height:25rem;
+    margin-top: 10rem;
+}
+.fix_img{
+    width:100%;
+    height:100%;
+    background-image: url('../img/fix_img.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* new product */
+.new_product{
+    width:100%;
+    height:100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.new_container{
+    display: flex;
+    align-items: center;
+    justify-content: first baseline;
+    gap:3rem;
+    overflow-x: hidden;
+    margin-top: 3rem;
+    transition: all .4s linear;
+}
+
+.slide_btn{
+    font-size: 2rem;
+    text-align: right;
+    padding-right:5rem;
+}
+
+.slide_btn span{
+    padding:.2rem 1rem;
+    border:1px solid var(--main-color);
+    text-align: center;
+    cursor: pointer;
+}
+
+.slide_btn span:hover{
+    background-color: var(--sub-color);
+}
+
+/* footer */
+#footer .footer_container{
+    border-top: 2px solid var(--main-color);
+    text-align: center;
+    padding:2rem 3rem;
+    margin-top: 10rem;
+}

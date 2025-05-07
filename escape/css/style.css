@@ -1,0 +1,446 @@
+/* 초기화 및 기본설정 */
+:root{
+    --bgColor : #090909;
+    --white : #fff;
+    --hdbg: rgba(0, 0, 0, 0.663);
+    --navbg :rgba(0, 0, 0, 0.881);
+    --main-color:#ffc800;
+    --sub-color:#ff8c00;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.3);
+
+}
+
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    border:none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
+section{
+    margin: 0 auto;
+    padding:6rem 3rem;
+    max-width: 1200px;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title h2{
+    font-size: 3.2rem;
+    color:var(--white);
+}
+
+/* header */
+.header {
+    position: fixed;
+    top:0; left:0; right:0;
+    /* left, right 둘 다 0 해야됨 */
+    z-index: 1000;
+    background: var(--hdbg);
+    backdrop-filter: blur(2rem);
+}
+
+/* 스크롤 내릴 시 */
+.header.active{
+    border-bottom: .1rem var(--white) solid;
+}
+
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 3rem;
+}
+.header .flex .logo img{
+    height: 6rem;
+}
+
+.header .flex .nav a{
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    color:var(--white);
+}
+.header .flex .nav a:hover{
+    color:var(--main-color);
+    text-decoration: underline;
+}
+#menuBtn{
+    font-size: 2rem;
+    color:var(--white);
+    display: none;
+}
+
+/* banner */
+.banner{
+    background: url("../images/banner.png") center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.542);
+    background-blend-mode: color;
+}
+
+.banner .contents{
+    text-align: center;
+    color:var(--white);
+}
+
+.banner .contents p{
+    font-size: 2rem;
+}
+
+.banner .contents h2{
+    font-size: 4rem;
+    margin-top: 1rem;
+}
+
+/* thema */
+.thema .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: flex-start;
+    justify-content: center;
+    gap:4rem;
+}
+
+.thema .container .box{
+    margin-bottom: 2rem;
+}
+
+.thema .container .box img{
+    height:45rem;
+    width:100%;
+    object-fit: contain;
+}
+
+.thema .container .box h2{
+    font-size: 2.5rem;
+    color:var(--white);
+    text-align: center;
+    margin:2rem 0;
+}
+
+.thema .container .box .box_content p{
+    color:var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.thema .container .box .box_content span{
+    color:var(--main-color);
+    font-size: 1.7rem;
+    font-weight: bolder;
+}
+
+ .thema .container .box .re_btn{
+    display: block;
+    font-size: 1.8rem;
+    background: transparent;
+    color:var(--white);
+    cursor: pointer;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding:1rem 2rem;
+    border-radius: 1rem;
+
+    border: 2px solid var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.thema .container .box .re_btn:hover {
+    background: var(--main-color);
+    color: var(--white);
+  }
+
+/* method */
+.method{
+    background-color: var(--white);
+}
+
+.method .title h2{
+    color:var(--bgColor);
+    margin-bottom: 1rem;
+}
+
+.method .title p{
+    font-size: 1.5rem;
+    color:var(--bgColor);
+}
+
+.method .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+
+.method .container .box{
+    text-align: center;
+    padding:3rem;
+    color:var(--bgColor);
+}
+
+.method .container .box img{
+    height:9rem;
+    margin-bottom: 1.5rem;
+}
+
+.method .container .box h2{
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.method .container .box p{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+
+
+/* recommend */
+.recommend{
+    background: url('../images/greeting-card-1096981_1280.jpg') center/cover no-repeat fixed;
+    background-color: rgba(0, 0, 0, 0.73);
+    background-blend-mode: color;
+}
+
+.recommend .title p{
+    color:var(--white);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.recommend .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+
+.recommend .container .box{
+    background: var(--bgColor);
+    padding:3rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.recommend .container .box h3{
+    font-size: 2rem;
+    color:var(--white);
+    padding:1rem;
+    border-bottom: .1rem solid #fff;
+}
+
+.recommend .container .box .content {
+    padding:1rem 0;
+}
+
+.recommend .container .box .content p{
+    font-size: 1.3rem;
+    color:var(--white);
+    line-height: 2rem;
+}
+
+.recommend .container .box .content span{
+    color:var(--main-color);
+}
+
+.recommend .container .box .image{
+    height:30rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.recommend .container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.recommend .container .box img{
+    width:100%; height:100%;
+    object-fit: cover;
+}
+
+
+.mnBtn {
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    background: transparent;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+  
+  /* 공통 테두리 스타일 */
+  .mnBtn::before,
+  .mnBtn::after,
+  .mnBtn span::before,
+  .mnBtn span::after {
+    content: "";
+    position: absolute;
+    background: var(--main-color);
+    transition: all 0.3s ease;
+  }
+  
+  /* 위쪽 선 */
+  .mnBtn::before {
+    height: 2px;
+    width: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  /* 왼쪽 선 */
+  .mnBtn::after {
+    width: 2px;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  /* 오른쪽 선 */
+  .mnBtn span::before {
+    width: 2px;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* 아래쪽 선 */
+  .mnBtn span::after {
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* hover 시 모든 방향 테두리 확장 */
+  .mnBtn:hover::before {
+    width: 100%;
+  }
+  .mnBtn:hover::after {
+    height: 100%;
+  }
+  .mnBtn:hover span::before {
+    height: 100%;
+  }
+  .mnBtn:hover span::after {
+    width: 100%;
+  }
+  
+  .mnBtn:hover {
+    color: var(--main-color);
+  }
+  
+/* footer */
+.footer{
+    background: var(--bgColor);
+    text-align: center;
+}
+
+.footer .share{
+    margin-bottom: 3rem;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    margin:0 .4rem;
+    line-height: 3rem;
+    font-size: 3rem;
+    color:var(--white);
+    background-color: var(--second-color);
+    border-radius: 50%;
+}
+
+.footer .share a:nth-child(even){
+    color:var(--main-color);
+}
+
+.footer .credit{
+    font-size: 1.3rem;
+    color:var(--white);
+}
+
+.footer .credit span{
+    color: var(--main-color);
+}
+
+
+/* media */
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width:768px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .title h2{
+        font-size: 2.9rem;
+    }
+
+    .banner{
+        min-height: 80vh;
+    }
+    
+    #menuBtn{
+        display: inline-block;
+        cursor: pointer;
+        font-size: 3rem;
+        transition: transform 0.3s ease;
+    }
+    #menuBtn.fa-xmark{
+        transform: rotate(90deg);
+    }
+
+    .header .flex .nav{
+        position: absolute;
+        top:100%; left:0; right:0;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--navbg);
+    }
+    .header .flex .nav.active{
+        max-height: 70vh;
+    }
+
+    .header .flex .nav a{
+        font-size: 2.2rem;
+        display: block;
+        padding:2rem;
+        margin:0; /* pc일때 left 2rem 줘서 여백생기기때문에 */
+        text-align: center;
+    }
+
+    .header .flex .nav a:hover{
+        text-decoration: none;
+        backdrop-filter: blur(2rem);
+    }
+}
