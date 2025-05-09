@@ -387,6 +387,11 @@ h2 {
   height: 50rem;
   width: 100%;
 }
+@media (min-width: 450px) and (max-width: 767px) {
+  .popup .popup_box img {
+    height: 40rem;
+  }
+}
 .popup .popup_box .top_bar {
   background: white;
   font-size: 3rem;

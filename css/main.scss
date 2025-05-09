@@ -442,6 +442,10 @@ h2 {
         img {
             height: 50rem;
             width: 100%;
+
+            @include mobile {
+                height: 40rem;
+            }
         }
 
         .top_bar {
