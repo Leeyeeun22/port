@@ -1,0 +1,271 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import "./mixin";
+
+/* setting */
+$main-color: #00c5a7;
+$sub-color: #1477df;
+$black: #181818;
+$light-color: #383838;
+$border: .1rem solid #ddd;
+$white: #fff;
+$light-bg: #edecec;
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+$border-shadow:.1rem solid rgba(0,0,0,.2);
+$box-bottom-shadow:0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    border: none;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+    @include desktop{
+        font-size: 55%;
+    }
+
+    @include mobile{
+        font-size: 50%;
+    }
+}
+
+section {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 3rem 4rem;
+
+    @include mobile{
+        padding:2rem;
+    }
+}
+
+/* header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    z-index: 1000;
+
+    &.active {
+        box-shadow: $box-shadow;
+    }
+
+    @include mobile{
+        padding:1rem 2rem;
+    }
+
+    /* top_menu */
+    .top_menu {
+        display: flex;
+        justify-content: flex-end;
+        background-color: $white;
+        border-bottom: $border;
+        padding: 1rem 4rem;
+
+        ul {
+            display: flex;
+            /* 이거 해야 li 요소들 가로정렬됨! 왜냐! li는 기본적으로 수직으로 정렬되기때문에 가로정렬을 해주려면 flex 해줘야됨*/
+
+            li {
+                &::after {
+                    content: "|";
+                    align-items: center;
+                    color: #ccc;
+                }
+
+                &:last-child::after {
+                    content: "";
+                }
+
+                &:nth-last-child(1) {
+
+                    a {
+                        padding-right: 0;
+                    }
+                }
+
+                a {
+                    padding: 0 1.5rem;
+                    color: $light-color;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+
+                    @include mobile{
+                        font-size: 1.5rem; 
+                    }
+                }
+            }
+        }
+    }
+
+    /* flex */
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+
+        .logo{
+            img{
+                width:100%;
+                @include mobile{
+                    height:3rem;
+                }
+            }
+        }
+
+        .navbar {
+            a {
+                font-size: 1.7rem;
+                color: $black;
+                padding: .2rem 3rem;
+                font-weight: bolder;
+
+                &:hover {
+                    color: $main-color;
+                }
+
+                @include mobile{
+                    display: block;
+                    padding:1.5rem;
+                    margin:1rem;
+                    font-size: 2rem;
+                    background: #eee;
+                }
+            }
+
+            @include mobile{
+                position: absolute;
+                top:100%; left:0; right:0;
+                background: $white;
+                box-shadow: $box-bottom-shadow;
+                padding:1rem;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform .2s ease;
+
+                &.active{
+                    transform: scaleY(1);
+                }
+            }
+        }
+
+        .icons {
+
+            i,
+            a {
+                font-size: 1.7rem;
+                color: $black;
+                height: 3.5rem;
+                width: 3.5rem;
+                line-height: 3.5rem;
+                background: #eee;
+                border-radius: 50%;
+                text-align: center;
+                cursor: pointer;
+                margin-left: .5rem;
+
+                &:hover {
+                    color: $white;
+                    background: $main-color;
+                    transform: rotate(360deg);
+                    transition: .2s linear;
+                }
+
+                @include mobile{
+                    font-size: 2.5rem;
+                    height: 4rem;
+                    width: 4rem;
+                    line-height: 4rem;
+                }
+            }
+
+            #menu-bars {
+                display: none;
+
+                @include mobile {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+/* 검색창 */
+#search-form {
+    position: fixed;
+    top: 110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+
+    &.active {
+        top: 0; // 보이게 하기
+    }
+
+    #search-box {
+        width: 50rem;
+        border-bottom: .1rem solid $white;
+        padding: 1rem 0;
+        color: #fff;
+        font-size: 3rem;
+        text-transform: none;
+        background: none;
+
+        &::placeholder {
+            color: $light-color;
+        }
+
+        &::-webkit-scrollbar-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    label {
+        color: $white;
+        cursor: pointer;
+        font-size: 3rem;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    #close {
+        position: absolute;
+        color: $white;
+        cursor: pointer;
+        top: 2rem;
+        right: 3rem;
+        font-size: 4rem;
+    }
+}
+
+
+
+
+
+

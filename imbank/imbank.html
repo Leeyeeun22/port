@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/png" href="images/icon_logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <title>iM뱅크</title>
+
+    <style>
+        /* 모달 배경 */
+        .modal-overlay {
+            /* display: none; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* 모달 콘텐츠 */
+        .modal-content {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* 닫기 버튼 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <section class="top_menu">
+            <ul>
+                <li><a href="#" class="">은행소개</a></li>
+                <li><a href="#" class="">고객센터</a></li>
+                <li><a href="#" class="">로그인</a></li>
+            </ul>
+        </section>
+
+        <section class="flex">
+
+            <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+
+            <nav class="navbar">
+                <a href="#home">개인뱅킹</a>
+                <a href="#about">기업뱅킹</a>
+                <a href="#options">금융상품몰</a>
+                <a href="#contact">금융서비스</a>
+                <a href="#blogs">인증센터</a>
+            </nav>
+
+            <div class="icons">
+                <i class="fas fa-search" id="search-icons"></i>
+                <a href="#" class="fa-solid fa-globe"></a>
+                <i class="fas fa-bars" id="menu-bars"></i>
+            </div>
+
+            <!-- 모달 구조 -->
+            <div id="figma-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal()">닫기</button>
+                    <iframe
+                        src="https://embed.figma.com/design/nlW7n0NMRfUqXdPt6jWShu/IMbank?node-id=1-2&embed-host=share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="search" name="" placeholder="검색어 입력해주세요" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- banner -->
+
+    <script>
+        function openModal() {
+            document.getElementById("figma-modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("figma-modal").style.display = "none";
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
