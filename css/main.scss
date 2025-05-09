@@ -434,15 +434,10 @@ h2 {
             img {
                 margin-top: 2rem;
                 width: 100%;
-            }
-        }
 
-        img {
-            height: 50rem;
-            width: 100%;
-
-            @include mobile {
-                height: 40rem;
+                @include mobile{
+                padding:2rem;
+                }
             }
         }
 

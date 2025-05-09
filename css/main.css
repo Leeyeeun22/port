@@ -383,13 +383,9 @@ h2 {
   margin-top: 2rem;
   width: 100%;
 }
-.popup .popup_box img {
-  height: 50rem;
-  width: 100%;
-}
 @media (min-width: 450px) and (max-width: 767px) {
-  .popup .popup_box img {
-    height: 40rem;
+  .popup .popup_box .popup_content img {
+    padding: 2rem;
   }
 }
 .popup .popup_box .top_bar {
