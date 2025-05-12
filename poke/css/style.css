@@ -1,0 +1,297 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  background: #fff;
+}
+
+section {
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  max-width: 1200px;
+}
+
+.btn_2 {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 2.2rem;
+  border-radius: 2rem;
+  background-color: #fcc42c;
+  margin-top: 1.5rem;
+}
+.btn_2 i {
+  margin-left: 0.5rem;
+}
+.btn_2:hover {
+  background: #272727;
+}
+.btn_2:hover i {
+  margin-left: 1rem;
+}
+
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1000;
+}
+.header.active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.header .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+}
+.header .flex .logo {
+  font-size: 2.4rem;
+  color: #fff;
+  font-family: "Cafe24Ssurround", serif;
+}
+.header .flex .navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    padding: 1rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .flex .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+.header .flex .navbar li {
+  text-align: center;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar li {
+    border-bottom: 0.2rem solid #f1f1f1;
+  }
+}
+.header .flex .navbar li a {
+  font-family: "Cafe24Ssurround", serif;
+  font-size: 1.7rem;
+  color: #151515;
+  padding: 1rem 0;
+  position: relative;
+  display: block;
+  width: 9rem;
+  text-align: center;
+}
+.header .flex .navbar li a.last-li {
+  display: none;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar li a.last-li {
+    display: block;
+  }
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar li a {
+    display: block;
+    font-size: 2rem;
+    margin: 2rem;
+    width: 100%;
+  }
+  .header .flex .navbar li a:hover {
+    color: #fcc42c;
+  }
+}
+.header .flex .navbar li a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fcc42c;
+  content: "";
+  transition: transform 0.3s;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: top 0.3s, opacity 0.3s, transform 0.3s;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar li a::after {
+    display: none;
+  }
+}
+.header .flex .navbar li a::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fcc42c;
+  content: "";
+  transition: transform 0.3s;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: bottom 0.3s, opacity 0.3s, transform 0.3s;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar li a::before {
+    display: none;
+  }
+}
+.header .flex .navbar li a:hover:before, .header .flex .navbar li a:hover:after, .header .flex .navbar li a:focus:before, .header .flex .navbar li a:focus:after {
+  transform: scale(1);
+  background: #fcc42c;
+}
+.header .flex .navbar li a:hover:after, .header .flex .navbar li a:focus:after {
+  top: 0%;
+  opacity: 1;
+}
+.header .flex .navbar li a:hover:before, .header .flex .navbar li a:focus:before {
+  bottom: 0%;
+  opacity: 1;
+}
+.header .flex .navbar .btn {
+  display: inline;
+  color: #fff;
+  font-size: 1.7rem;
+  border-radius: 2rem;
+  background-color: #272727;
+  padding: 1rem 1.5rem;
+  font-family: "Cafe24Ssurround", serif;
+}
+.header .flex .navbar .btn:hover {
+  background: #fcc42c;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex .navbar .btn {
+    display: none;
+  }
+}
+.header .flex #menuBtn {
+  font-size: 2rem;
+  color: #151515;
+  cursor: pointer;
+  display: none;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .header .flex #menuBtn {
+    display: inline-block;
+    font-size: 3rem;
+  }
+  .header .flex #menuBtn.fa-xmark {
+    transform: rotate(90deg);
+  }
+}
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  align-content: center;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .home {
+    min-height: 80vh;
+    padding-top: 6rem;
+  }
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fcc42c;
+  width: 49%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 0 55% 55% 0;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .home::before {
+    top: 0;
+    width: 100%;
+    height: 50%;
+    border-radius: 0;
+  }
+}
+.home .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.home .flex .img {
+  flex: 1 1 40rem;
+  text-align: center;
+}
+.home .flex .img img {
+  height: 40rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.home .flex .content {
+  flex: 1 1 40rem;
+  text-align: left;
+}
+.home .flex .content h2 {
+  font-size: 6rem;
+}
+.home .flex .content span {
+  font-size: 2rem;
+}
+.home .flex .content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}/*# sourceMappingURL=style.css.map */

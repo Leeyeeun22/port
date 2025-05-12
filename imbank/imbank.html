@@ -7,56 +7,9 @@
     <link rel="icon" type="images/png" href="images/icon_logo.jpg">
     <link rel="stylesheet" href="css/style.css">
     <title>iM뱅크</title>
-
-    <style>
-        /* 모달 배경 */
-        .modal-overlay {
-            /* display: none; */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        /* 모달 콘텐츠 */
-        .modal-content {
-            position: relative;
-            width: 80%;
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* 닫기 버튼 */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-    </style>
 </head>
-
 <body>
-
     <header class="header">
-
         <section class="top_menu">
             <ul>
                 <li><a href="#" class="">은행소개</a></li>
@@ -83,17 +36,6 @@
                 <i class="fas fa-bars" id="menu-bars"></i>
             </div>
 
-            <!-- 모달 구조 -->
-            <div id="figma-modal" class="modal-overlay">
-                <div class="modal-content">
-                    <button class="close-btn" onclick="closeModal()">닫기</button>
-                    <iframe
-                        src="https://embed.figma.com/design/nlW7n0NMRfUqXdPt6jWShu/IMbank?node-id=1-2&embed-host=share"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
         </section>
     </header>
 
@@ -106,18 +48,8 @@
 
     <!-- banner -->
 
-    <script>
-        function openModal() {
-            document.getElementById("figma-modal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("figma-modal").style.display = "none";
-        }
-    </script>
 
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
