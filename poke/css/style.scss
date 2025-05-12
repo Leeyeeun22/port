@@ -54,12 +54,12 @@ html {
     }
 
     @include tablet {
-        font-size: 55%;
+        font-size: 57%;
         ;
     }
 
     @include mobile {
-        font-size: 50%;
+        font-size: 52%;
     }
 }
 
@@ -152,8 +152,8 @@ section {
             align-items: center;
             gap: 1rem;
 
-            @include mobile {
-                display: block;
+            @include mobile{
+                                display: block;
                 position: absolute;
                 top: 100%;
                 right: 0;
@@ -356,6 +356,10 @@ section {
             img {
                 height: 40rem;
                 object-fit: contain;
+
+                @include mobile{
+                    height:35rem;
+                }
             }
         }
 
@@ -365,6 +369,10 @@ section {
 
             h2 {
                 font-size: 6rem;
+
+                @include mobile{
+                    font-size: 5rem;
+                }
             }
 
             span {
@@ -396,6 +404,7 @@ section {
         @include mobile{
 grid-template-columns: repeat(2, 1fr);        
 }
+
 
         .box {
             position: relative;
@@ -507,7 +516,7 @@ grid-template-columns: repeat(2, 1fr);
                 object-fit: cover;
 
                 @include mobile{
-                    height:55rem;
+                    height:50rem;
                 }
             }
         }
@@ -518,7 +527,6 @@ grid-template-columns: repeat(2, 1fr);
 
             .btn_2 {
                 margin-top: 3rem;
-
             }
 
             h2 {
@@ -527,7 +535,7 @@ grid-template-columns: repeat(2, 1fr);
                 font-family: $cafe-font;
 
                 @include mobile{
-                    font-size: 6rem;
+                    font-size: 4.5rem;
                 }
             }
 
@@ -536,6 +544,10 @@ grid-template-columns: repeat(2, 1fr);
                 color: $sub-color;
                 font-family: $Ink-font;
                 margin-bottom: 3rem;
+
+                @include mobile{
+                    font-size: 2.5rem;
+                }
             }
 
             p {
@@ -650,6 +662,10 @@ grid-template-columns: repeat(2, 1fr);
         color: $black;
         margin-bottom: 1.5rem;
         font-family: $cafe-font;
+
+        @include mobile{
+            font-size: 2rem;
+        }
       }
 
       p {

@@ -18,7 +18,7 @@ html {
     font-size: 55%;
   }
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   html {
     font-size: 50%;
   }
@@ -139,7 +139,7 @@ h2 {
   transform: translateX(-50%);
   color: #161616;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .banner .flex .mouseicon {
     display: none;
   }
@@ -194,7 +194,7 @@ h2 {
 .about .flex .img {
   flex: 1 1 40rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .flex .img {
     padding: 1.5rem;
   }
@@ -207,7 +207,7 @@ h2 {
 .about .flex .content {
   flex: 1 1 40rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .flex .content {
     padding: 1.5rem;
   }
@@ -258,7 +258,7 @@ h2 {
   position: relative;
   padding-left: 2rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .flex .content .flex_box p {
     padding-left: 0;
   }
@@ -274,7 +274,7 @@ h2 {
   border-radius: 50%;
   transform: translateY(-50%);
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .flex .content .flex_box p::before {
     display: none;
   }
@@ -296,7 +296,7 @@ h2 {
   justify-content: flex-start;
   gap: 1rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .portfolio .port_container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -383,7 +383,7 @@ h2 {
   margin-top: 2rem;
   width: 100%;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .popup .popup_box .popup_content img {
     padding: 2rem;
   }

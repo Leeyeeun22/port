@@ -40,12 +40,12 @@ html {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   html {
-    font-size: 55%;
+    font-size: 57%;
   }
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   html {
-    font-size: 50%;
+    font-size: 52%;
   }
 }
 
@@ -129,7 +129,7 @@ section {
   align-items: center;
   gap: 1rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar {
     display: block;
     position: absolute;
@@ -149,7 +149,7 @@ section {
 .header .flex .navbar li {
   text-align: center;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li {
     border-bottom: 0.2rem solid #f1f1f1;
   }
@@ -167,12 +167,12 @@ section {
 .header .flex .navbar li a.last-li {
   display: none;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li a.last-li {
     display: block;
   }
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li a {
     display: block;
     font-size: 2rem;
@@ -196,7 +196,7 @@ section {
   opacity: 0;
   transition: top 0.3s, opacity 0.3s, transform 0.3s;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li a::after {
     display: none;
   }
@@ -214,7 +214,7 @@ section {
   opacity: 0;
   transition: bottom 0.3s, opacity 0.3s, transform 0.3s;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li a::before {
     display: none;
   }
@@ -243,7 +243,7 @@ section {
 .header .flex .navbar .btn:hover {
   background: #fcc42c;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar .btn {
     display: none;
   }
@@ -254,7 +254,7 @@ section {
   cursor: pointer;
   display: none;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex #menuBtn {
     display: inline-block;
     font-size: 3rem;
@@ -269,7 +269,7 @@ section {
   min-height: 100vh;
   align-content: center;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .home {
     min-height: 80vh;
     padding-top: 6rem;
@@ -286,7 +286,7 @@ section {
   z-index: -1;
   border-radius: 0 55% 55% 0;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .home::before {
     top: 0;
     width: 100%;
@@ -310,12 +310,22 @@ section {
   -o-object-fit: contain;
      object-fit: contain;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .home .flex .img img {
+    height: 35rem;
+  }
+}
 .home .flex .content {
   flex: 1 1 40rem;
   text-align: left;
 }
 .home .flex .content h2 {
   font-size: 6rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .home .flex .content h2 {
+    font-size: 5rem;
+  }
 }
 .home .flex .content span {
   font-size: 2rem;
@@ -338,7 +348,7 @@ section {
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .best .menu_container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -435,9 +445,9 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .about_banner .image img {
-    height: 55rem;
+    height: 50rem;
   }
 }
 .about .about_banner .content {
@@ -452,9 +462,9 @@ section {
   color: #076ec1;
   font-family: "Cafe24Ssurround", serif;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .about .about_banner .content h2 {
-    font-size: 6rem;
+    font-size: 4.5rem;
   }
 }
 .about .about_banner .content > span {
@@ -462,6 +472,11 @@ section {
   color: #272727;
   font-family: "InkLipquid", serif;
   margin-bottom: 3rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .about .about_banner .content > span {
+    font-size: 2.5rem;
+  }
 }
 .about .about_banner .content p {
   color: #151515;
@@ -560,6 +575,11 @@ section {
   color: #151515;
   margin-bottom: 1.5rem;
   font-family: "Cafe24Ssurround", serif;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .reviews .row .content h3 {
+    font-size: 2rem;
+  }
 }
 .reviews .row .content p {
   line-height: 2;
@@ -665,7 +685,7 @@ section {
   border-bottom: 0.1rem solid #adadad;
   padding-bottom: 2rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .footer .flex {
     flex-flow: column;
     align-items: center;
@@ -689,7 +709,7 @@ section {
 .footer .flex .links a:hover {
   color: #fcc42c;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .footer .flex .links a {
     display: block;
     text-align: center;
