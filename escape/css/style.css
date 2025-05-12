@@ -462,8 +462,13 @@ section {
 
 @media (max-width:450px) {
     .thema .container {
-        grid-template-columns: repeat(auto-fit, 20rem);
+        grid-template-columns: repeat(auto-fit, 17rem);
         gap: 1.5rem;
+        padding:0rem;
+    }
+
+    .thema .container .box{
+        padding:0;
     }
 
     .thema .container .box img {
@@ -478,7 +483,6 @@ section {
     }
 
     .method .title h2 {
-        color: var(--bgColor);
         margin-bottom: 1rem;
     }
 
@@ -488,7 +492,7 @@ section {
     }
 
     .method .container {
-        grid-template-columns: repeat(auto-fit, 20rem);
+        grid-template-columns: repeat(auto-fit, 17rem);
         gap: 1rem;
     }
 
@@ -498,7 +502,7 @@ section {
 
 
     .recommend .container {
-    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-template-columns: repeat(auto-fit, 17rem);
 }
 
 .recommend .container .box {
@@ -506,7 +510,7 @@ section {
 }
 
 .recommend .container .box .image {
-    height: 25rem;
+    height: 20rem;
     overflow: hidden;
     cursor: pointer;
 }
