@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css");
 @font-face {
   font-family: "Cafe24Ssurround";
@@ -9,6 +10,12 @@
   font-family: "Pretendard-Regular";
   src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InkLipquid";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 * {
@@ -58,17 +65,39 @@ section {
   font-size: 1.5rem;
   padding: 1rem 2.2rem;
   border-radius: 2rem;
-  background-color: #fcc42c;
+  background-color: #272727;
   margin-top: 1.5rem;
+  cursor: pointer;
+  font-family: "Cafe24Ssurround", serif;
 }
 .btn_2 i {
   margin-left: 0.5rem;
 }
 .btn_2:hover {
-  background: #272727;
+  background: #fcc42c;
 }
 .btn_2:hover i {
   margin-left: 1rem;
+}
+
+.title {
+  text-align: center;
+  padding: 5rem 0;
+  font-family: "Cafe24Ssurround", serif;
+}
+.title h2 {
+  color: #151515;
+  font-size: 3.6rem;
+}
+.title h2 span {
+  color: #fcc42c;
+  border-bottom: 0.4rem solid #fcc42c;
+}
+.title > span {
+  font-size: 2.5rem;
+  color: #adadad;
+  margin-bottom: 1.5rem;
+  font-family: "InkLipquid", serif;
 }
 
 /* header */
@@ -294,4 +323,405 @@ section {
 .home .flex .content p {
   font-size: 1.5rem;
   line-height: 1.8;
+}
+
+/* 베스트 메뉴 */
+.best {
+  text-align: center;
+}
+.best .btn_2 {
+  margin-top: 6rem;
+}
+.best .menu_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .best .menu_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.best .menu_container .box {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+.best .menu_container .box img {
+  height: 18rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: -1;
+}
+.best .menu_container .box h3 {
+  font-size: 1.7rem;
+  color: #151515;
+  text-align: center;
+  margin-top: 1rem;
+}
+.best .menu_container .box .fa-heart,
+.best .menu_container .box .fa-thumbs-up {
+  position: absolute;
+  top: 1.5rem;
+  color: #fff;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #272727;
+  z-index: 1;
+}
+.best .menu_container .box .fa-heart {
+  right: -15rem;
+}
+.best .menu_container .box .fa-heart:hover {
+  background-color: #fcc42c;
+}
+.best .menu_container .box:hover .fa-heart {
+  right: 1.5rem;
+}
+.best .menu_container .box .fa-thumbs-up {
+  left: -15rem;
+}
+.best .menu_container .box .fa-thumbs-up:hover {
+  background-color: #fcc42c;
+}
+.best .menu_container .box:hover .fa-thumbs-up {
+  left: 1.5rem;
+}
+.best .menu_container .box .price .under {
+  color: #adadad;
+  text-decoration: line-through;
+  font-size: 1.4rem;
+}
+.best .menu_container .box .price .sale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.best .menu_container .box .price .sale > span {
+  color: red;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.best .menu_container .box .price .sale .sale_pr {
+  color: #151515;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.about {
+  width: 100%;
+  margin-top: 5rem;
+}
+.about .about_banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.about .about_banner .image {
+  flex: 1 1 40rem;
+}
+.about .about_banner .image img {
+  width: 100%;
+  height: 65rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .about .about_banner .image img {
+    height: 55rem;
+  }
+}
+.about .about_banner .content {
+  flex: 1 1 40rem;
+  padding: 3rem 6rem;
+}
+.about .about_banner .content .btn_2 {
+  margin-top: 3rem;
+}
+.about .about_banner .content h2 {
+  font-size: 7rem;
+  color: #076ec1;
+  font-family: "Cafe24Ssurround", serif;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .about .about_banner .content h2 {
+    font-size: 6rem;
+  }
+}
+.about .about_banner .content > span {
+  font-size: 3.3rem;
+  color: #272727;
+  font-family: "InkLipquid", serif;
+  margin-bottom: 3rem;
+}
+.about .about_banner .content p {
+  color: #151515;
+  font-size: 1.6rem;
+  line-height: 2;
+  margin-top: 3rem;
+}
+.about .about_banner .content p span {
+  color: #fcc42c;
+  font-weight: bolder;
+  font-size: 3rem;
+  font-family: "InkLipquid", serif;
+}
+
+.order form {
+  max-width: 90rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid rgba(154, 154, 154, 0.2);
+  background: #fff;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+.order form .inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.order form .inputBox .input {
+  width: 49%;
+}
+.order form .inputBox .input span {
+  display: block;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+  color: #151515;
+}
+.order form .inputBox .input input,
+.order form .inputBox .input textarea {
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: #151515;
+  text-transform: none;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.order form .inputBox .input input:focus,
+.order form .inputBox .input textarea:focus {
+  border: 0.4rem solid #fcc42c;
+}
+.order form .inputBox .input textarea {
+  height: 20rem;
+  resize: none;
+}
+.order .btn_box {
+  text-align: center;
+}
+.order .btn_box .btn_2 {
+  margin-top: 0.6rem;
+  font-size: 2rem;
+}
+
+.reviews {
+  background: url("../images/review_bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin-top: 7rem;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reviews .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 40vh;
+}
+.reviews .row .content {
+  flex: 1 1 40rem;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.reviews .row .content h3 {
+  font-size: 2.5rem;
+  color: #151515;
+  margin-bottom: 1.5rem;
+  font-family: "Cafe24Ssurround", serif;
+}
+.reviews .row .content p {
+  line-height: 2;
+  font-size: 1.7rem;
+  color: #272727;
+}
+.reviews .row .slider-container {
+  flex: 1 1 40rem;
+  display: flex;
+  height: auto;
+}
+.reviews .row .slider-container .slide {
+  flex: 1;
+  height: 100%;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reviews .row .slider-container .slide.active {
+  display: flex;
+  animation: slide 0.4s ease-out backwards;
+}
+.reviews .row .slider-container .slide p {
+  line-height: 1.8;
+  font-size: 1.6rem;
+  color: #272727;
+  animation: slide 0.4s 0.2s ease-out backwards;
+}
+.reviews .row .slider-container .slide .user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 0.1rem solid #272727;
+  animation: slide 0.4s 0.4s ease-out backwards;
+}
+.reviews .row .slider-container .slide .user img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.reviews .row .slider-container .slide h3 {
+  font-size: 1.8rem;
+  color: #151515;
+  margin-bottom: 0.2rem;
+}
+.reviews .row .slider-container .slide .stars i {
+  color: #fcc42c;
+  font-size: 1.6rem;
+}
+
+.controls {
+  margin-top: 2.5rem;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.controls div {
+  font-size: 2.5rem;
+  color: #adadad;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+.controls div:hover {
+  color: #151515;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+.footer {
+  background: #272727;
+  color: #fff;
+  text-align: center;
+  margin-top: 3rem;
+}
+.footer p {
+  font-size: 1.5rem;
+}
+
+.footer {
+  background-color: #272727;
+}
+.footer .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 0.1rem solid #adadad;
+  padding-bottom: 2rem;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .footer .flex {
+    flex-flow: column;
+    align-items: center;
+  }
+}
+.footer .flex .logo {
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Cafe24Ssurround", serif;
+  font-size: 2rem;
+}
+.footer .flex .logo:hover {
+  color: #fcc42c;
+}
+.footer .flex .links a {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Cafe24Ssurround", serif;
+}
+.footer .flex .links a:hover {
+  color: #fcc42c;
+}
+@media (min-width: 450px) and (max-width: 767px) {
+  .footer .flex .links a {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.7rem;
+  }
+}
+.footer .flex .extra-link {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Cafe24Ssurround", serif;
+}
+.footer .flex .extra-link:hover {
+  color: #fcc42c;
+}
+.footer .credit {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.footer .credit p {
+  font-size: 1.7rem;
+  color: #fff;
+}
+.footer .credit p span {
+  color: #fcc42c;
+}
+.footer .credit a {
+  font-size: 1.7rem;
+  color: #adadad;
+  margin-left: 1.5rem;
+}
+.footer .credit a:hover {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
