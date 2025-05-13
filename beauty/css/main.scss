@@ -1,0 +1,721 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+@import "../../css/mixin";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+$pre-font: 'Pretendard-Regular', serif;
+
+$main-color: #df2929;
+$sub-color: #272727;
+$light-color: #b2b2b2;
+$light-black: #b9b9b9;
+$black: #151515;
+$white: #fff;
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: all .2s linear;
+    font-family: $pre-font;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include desktop {
+        font-size: 60%;
+    }
+
+    @include tablet {
+        font-size: 57%;
+        ;
+    }
+
+    @include mobile {
+        font-size: 52%;
+    }
+}
+
+section {
+    margin: 0 auto;
+    padding: 4rem 6rem;
+    max-width: 1200px;
+
+    @include mobile {
+        padding: 3rem 4rem;
+
+    }
+}
+
+.sub-heading {
+    text-align: center;
+    color: $main-color;
+    font-size: 1.7rem;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+.heading {
+    text-align: center;
+    color: $black;
+    font-size: 3rem;
+    padding-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+/* 버튼 */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: $black;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+
+    &:hover {
+        background: $main-color;
+        letter-spacing: .1rem;
+        /* 애니메이션처럼 커짐 */
+    }
+}
+
+.btn_2 {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    color: $black;
+    background: $white;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+
+    &:hover {
+        background: $black;
+        color: $white;
+        letter-spacing: .1rem;
+        /* 애니메이션처럼 커짐 */
+    }
+}
+
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    z-index: 1000;
+
+    &.active {
+        box-shadow: $box-shadow;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 6rem;
+
+        @include mobile {
+            padding: 2rem;
+            background-color: pink;
+        }
+
+        .logo {
+            img {
+                width: 4.5rem;
+                height: 4.5rem;
+                border-radius: 50%;
+                line-height: 4.5rem;
+
+                @include mobile {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: $white;
+                padding: 1rem;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+                &.active {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            a {
+                font-size: 1.7rem;
+                border-radius: .5rem;
+                padding: .5rem 1.5rem;
+                color: $black;
+
+                &.active,
+                &:hover {
+                    color: $white;
+                    background: $main-color;
+                }
+
+                @include mobile {
+                    display: block;
+                    font-size: 2rem;
+                    margin: 2rem;
+                }
+            }
+        }
+
+        .icons {
+
+            i,
+            a {
+                cursor: pointer;
+                margin-left: .3rem;
+                height: 4.5rem;
+                width: 4.5rem;
+                line-height: 4.5rem;
+                text-align: center;
+                font-size: 1.8rem;
+                color: $black;
+                border-radius: 50%;
+                background-color: #eee;
+
+                &:hover {
+                    background: $main-color;
+                    color: $white;
+                    transform: rotate(360deg);
+                }
+            }
+
+            #menu-bars {
+                display: none;
+
+                @include mobile {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    /* top -110% 해서 안보이게 함 */
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+
+    &.active {
+        top: 0;
+    }
+
+    #search-box {
+        width: 50rem;
+        border-bottom: .1rem solid #fff;
+        padding: 1rem 0;
+        color: #fff;
+        font-size: 2.5rem;
+        text-transform: none;
+        background: none;
+
+        &::placeholder {
+            color: #eee;
+        }
+
+        &::-webkit-scrollbar-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    label {
+        color: #fff;
+        cursor: pointer;
+        font-size: 2.5rem;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    #close {
+        position: absolute;
+        color: #fff;
+        cursor: pointer;
+        top: 2rem;
+        right: 3rem;
+        font-size: 4rem;
+    }
+}
+
+.home {
+    width: 100%;
+    padding-top: 7rem;
+
+    .home-slider {
+
+        .slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            max-height: 90vh;
+
+            @include mobile {
+                max-height: 120vh;
+            }
+
+            .content {
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                transform: translateY(-50%);
+
+                &.second {
+
+                    h3,
+                    p,
+                    span {
+                        color: $white;
+                    }
+                }
+
+                span {
+                    font-size: 1.9rem;
+
+                    @include mobile {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                h3 {
+                    font-size: 6rem;
+
+                    @include mobile {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                p {
+                    font-size: 2rem;
+                    line-height: 2;
+
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            .image {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+/* dishes */
+.dishes {
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap: 1.5rem;
+
+                            @include mobile{
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+
+        .box {
+            padding: 2rem;
+            background: $white;
+            border-radius: .5rem;
+            border: .1rem solid rgba(0, 0, 0, .2);
+            box-shadow: $box-shadow;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+
+            img {
+                height: 18rem;
+                margin: 1rem 0;
+
+                                    @include mobile{
+                        height:12rem;
+                    }
+            }
+
+            h3 {
+                color: $black;
+                font-size: 1.7rem;
+                margin-top: 1.5rem;
+
+                                    @include mobile{
+                        font-size: 1.5rem;
+                    }
+            }
+
+            .price {
+                margin: 1.2rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: .8rem;
+
+                .sale {
+                    color: $main-color;
+                    font-size: 1.8rem;
+                    font-weight: bolder;
+
+                    @include mobile{
+                        font-size: 1.4rem;
+                    }
+
+                }
+
+                .under {
+                    text-decoration: line-through;
+                    color: $light-black;
+                    font-size: 1.6rem;
+
+                    @include mobile{
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .main_price {
+                    color: $black;
+                    font-size: 2rem;
+                    font-weight: bolder;
+
+                    @include mobile{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+
+            .fa-heart,
+            .fa-bookmark {
+                position: absolute;
+                top: 1.5rem;
+                background: #eee;
+                border-radius: 50%;
+                height: 5rem;
+                width: 5rem;
+                line-height: 5rem;
+                font-size: 2rem;
+                color: $black;
+
+                &:hover {
+                    background: $main-color;
+                    color: $white;
+                }
+            }
+
+            .fa-heart {
+                right: 1.5rem;
+            }
+
+            .fa-bookmark {
+                left: 1.5rem;
+            }
+        }
+    }
+}
+
+.about {
+    background: url('../images/beauty-4993469_1280.jpg') center/cover no-repeat fixed;
+    background-color: rgba(0, 0, 0, 0.356);
+    background-blend-mode: color;
+    min-height: 53vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+
+    .content {
+        text-align: center;
+
+        h2 {
+            color: $white;
+            font-size: 2.7rem;
+        }
+
+        p {
+            color: $white;
+            font-size: 1.7rem;
+            margin: 2rem 0;
+        }
+    }
+}
+
+.menu {
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 1.5rem;
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .box {
+            background: #fff;
+            border: .1rem solid rgba(0, 0, 0, .2);
+            border-radius: .5rem;
+            box-shadow: $box-shadow;
+            cursor: pointer;
+
+            .image {
+                height: 25rem;
+                width: 100%;
+                padding: 1.5rem;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    border-radius: .5rem;
+                    object-fit: cover;
+                }
+
+                .fa-heart {
+                    position: absolute;
+                    top: 2.5rem;
+                    right: 2.5rem;
+                    height: 5rem;
+                    width: 5rem;
+                    line-height: 5rem;
+                    text-align: center;
+                    font-size: 2rem;
+                    background: #fff;
+                    border-radius: 50%;
+                    color: $black;
+
+                    &:hover {
+                        background: $main-color;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .content {
+                padding: 2rem;
+                padding-top: 0;
+
+                h3 {
+                    color: $black;
+                    font-size: 1.7rem;
+                }
+
+                p {
+                    color: $light-color;
+                    font-size: 1.4rem;
+                    padding: .5rem 0;
+                    line-height: 1.5;
+                }
+
+                .pice {
+                    color: $main-color;
+                    margin-left: 1rem;
+                    font-size: 1.8rem;
+                    font-weight: bolder;
+                }
+
+                .stars {
+                    padding-bottom: 1rem;
+
+                    i {
+                        font-size: 1.7rem;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.review {
+    .swiper-wrapper {
+        width: 100%;
+
+        .slide {
+            max-width: 100%;
+            padding: 2rem;
+            box-shadow: $box-shadow;
+            border: .1rem solid rgba(0, 0, 0, .2);
+            border-radius: .5rem;
+            position: relative;
+            min-height: 28rem;
+            flex-direction: column;
+
+            p {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                color: $light-color;
+                margin-top: auto;
+            }
+
+            .user {
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+                padding-bottom: 1.5rem;
+
+                img {
+                    height: 7rem;
+                    width: 7rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    color: $black;
+                    font-size: 2rem;
+                    padding-bottom: .5rem;
+                }
+
+                i {
+                    font-size: 1.3rem;
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    border-top: .1rem solid rgba(11, 11, 11, 0.1);
+    margin-top: 5rem;
+
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        gap: 2rem;
+
+        @include mobile{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box_logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            img {
+                height: 5rem;
+                border-radius: 50%;
+            }
+        }
+
+        .box {
+            text-align: left;
+
+            h3 {
+                padding: .8rem 0;
+                font-size: 1.6rem;
+                color: $black;
+            }
+
+            a {
+                display: block;
+                padding: .8rem 0;
+                font-size: 1.5rem;
+                color: $light-color;
+
+                &:hover {
+                    color: $black;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        font-size: 1.4rem;
+        color: $light-black;
+        padding: .5rem;
+        padding-top: 1.5rem;
+        margin-top: 1.5rem;
+
+        span {
+            color: $black;
+        }
+    }
+}
+
+/* loading */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &.fade-out {
+        top: 110%;
+        opacity: 0;
+    }
+
+    img {
+        width: 10rem;
+    }
+
+    @include mobile{
+        display: none;
+    }
+
+}
