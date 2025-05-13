@@ -48,13 +48,17 @@ html {
     }
 }
 
+body {
+    overflow-x: hidden;
+}
+
 section {
     margin: 0 auto;
     padding: 4rem 6rem;
     max-width: 1200px;
 
     @include mobile {
-        padding: 3rem 4rem;
+        padding: 1rem;
 
     }
 }
@@ -132,8 +136,7 @@ header {
         padding: 1rem 6rem;
 
         @include mobile {
-            padding: 2rem;
-            background-color: pink;
+            padding: 1rem 2rem;
         }
 
         .logo {
@@ -284,8 +287,11 @@ header {
     padding-top: 7rem;
 
     .home-slider {
+        max-width: 100%;
+        overflow: hidden;
 
         .slide {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -301,6 +307,7 @@ header {
                 top: 50%;
                 left: 10%;
                 transform: translateY(-50%);
+                padding:1rem;
 
                 &.second {
 
@@ -361,9 +368,10 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
         gap: 1.5rem;
 
-                            @include mobile{
-                        grid-template-columns: repeat(2, 1fr);
-                    }
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 1rem;
+        }
 
         .box {
             padding: 2rem;
@@ -380,9 +388,9 @@ header {
                 height: 18rem;
                 margin: 1rem 0;
 
-                                    @include mobile{
-                        height:12rem;
-                    }
+                @include mobile {
+                    height: 10rem;
+                }
             }
 
             h3 {
@@ -390,9 +398,11 @@ header {
                 font-size: 1.7rem;
                 margin-top: 1.5rem;
 
-                                    @include mobile{
-                        font-size: 1.5rem;
-                    }
+                @include mobile {
+                    font-size: 1.5rem;
+                    margin-top: .5rem;
+
+                }
             }
 
             .price {
@@ -407,7 +417,7 @@ header {
                     font-size: 1.8rem;
                     font-weight: bolder;
 
-                    @include mobile{
+                    @include mobile {
                         font-size: 1.4rem;
                     }
 
@@ -418,7 +428,7 @@ header {
                     color: $light-black;
                     font-size: 1.6rem;
 
-                    @include mobile{
+                    @include mobile {
                         font-size: 1.2rem;
                     }
                 }
@@ -428,7 +438,7 @@ header {
                     font-size: 2rem;
                     font-weight: bolder;
 
-                    @include mobile{
+                    @include mobile {
                         font-size: 1.3rem;
                     }
                 }
@@ -445,6 +455,13 @@ header {
                 line-height: 5rem;
                 font-size: 2rem;
                 color: $black;
+
+                @include mobile {
+                    height: 4rem;
+                    width: 4rem;
+                    font-size: 1.6rem;
+                    line-height: 4rem;
+                }
 
                 &:hover {
                     background: $main-color;
@@ -467,11 +484,18 @@ header {
     background: url('../images/beauty-4993469_1280.jpg') center/cover no-repeat fixed;
     background-color: rgba(0, 0, 0, 0.356);
     background-blend-mode: color;
-    min-height: 53vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10rem;
+
+    @include mobile {
+        width: 100%;
+        min-height: 45vh;
+        margin-top: 5rem;
+
+    }
 
     .content {
         text-align: center;
@@ -513,6 +537,10 @@ header {
                 overflow: hidden;
                 position: relative;
 
+                @include mobile {
+                    height: 18rem;
+                }
+
                 img {
                     height: 100%;
                     width: 100%;
@@ -533,6 +561,13 @@ header {
                     border-radius: 50%;
                     color: $black;
 
+                    @include mobile {
+                        height: 4rem;
+                        width: 4rem;
+                        line-height: 4rem;
+                        font-size: 1.8rem;
+                    }
+
                     &:hover {
                         background: $main-color;
                         color: #fff;
@@ -547,6 +582,10 @@ header {
                 h3 {
                     color: $black;
                     font-size: 1.7rem;
+
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
                 }
 
                 p {
@@ -554,13 +593,10 @@ header {
                     font-size: 1.4rem;
                     padding: .5rem 0;
                     line-height: 1.5;
-                }
 
-                .pice {
-                    color: $main-color;
-                    margin-left: 1rem;
-                    font-size: 1.8rem;
-                    font-weight: bolder;
+                    @include mobile {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 .stars {
@@ -569,6 +605,29 @@ header {
                     i {
                         font-size: 1.7rem;
                         color: $main-color;
+
+                        @include mobile {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+
+                .btm {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                    flex-wrap: wrap;
+
+                    .pice {
+                        color: $main-color;
+                        font-size: 1.8rem;
+                        font-weight: bolder;
+
+                        @include mobile {
+                            font-size: 1.5rem;
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -578,10 +637,10 @@ header {
 
 .review {
     .swiper-wrapper {
-        width: 100%;
+        max-width: 100%;
 
         .slide {
-            max-width: 100%;
+            width: 100%;
             padding: 2rem;
             box-shadow: $box-shadow;
             border: .1rem solid rgba(0, 0, 0, .2);
@@ -590,11 +649,20 @@ header {
             min-height: 28rem;
             flex-direction: column;
 
+            @include mobile {
+                padding: 1rem;
+                min-height: 25rem;
+            }
+
             p {
                 font-size: 1.5rem;
                 line-height: 1.8;
                 color: $light-color;
                 margin-top: auto;
+
+                @include mobile {
+                    font-size: 1.3rem;
+                }
             }
 
             .user {
@@ -608,17 +676,30 @@ header {
                     width: 7rem;
                     border-radius: 50%;
                     object-fit: cover;
+
+                    @include mobile {
+                        height: 5rem;
+                        width: 5rem;
+                    }
                 }
 
                 h3 {
                     color: $black;
                     font-size: 2rem;
                     padding-bottom: .5rem;
+
+                    @include mobile {
+                        font-size: 1.7rem;
+                    }
                 }
 
                 i {
                     font-size: 1.3rem;
                     color: $main-color;
+
+                    @include mobile {
+                        font-size: 1.2rem;
+                    }
                 }
             }
         }
@@ -634,11 +715,9 @@ header {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 2rem;
 
-        @include mobile{
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 2rem;
         }
 
         .box_logo {
@@ -646,6 +725,10 @@ header {
             align-items: center;
             justify-content: center;
             text-align: center;
+
+            @include mobile {
+                display: none;
+            }
 
             img {
                 height: 5rem;
@@ -660,6 +743,10 @@ header {
                 padding: .8rem 0;
                 font-size: 1.6rem;
                 color: $black;
+
+                @include mobile {
+                    font-size: 1.4rem;
+                }
             }
 
             a {
@@ -667,6 +754,10 @@ header {
                 padding: .8rem 0;
                 font-size: 1.5rem;
                 color: $light-color;
+
+                @include mobile {
+                    font-size: 1.3rem;
+                }
 
                 &:hover {
                     color: $black;
@@ -684,6 +775,10 @@ header {
         padding: .5rem;
         padding-top: 1.5rem;
         margin-top: 1.5rem;
+
+        @include mobile {
+            font-size: 1.3rem;
+        }
 
         span {
             color: $black;
@@ -714,7 +809,7 @@ header {
         width: 10rem;
     }
 
-    @include mobile{
+    @include mobile {
         display: none;
     }
 

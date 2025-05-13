@@ -38,6 +38,10 @@ html {
   }
 }
 
+body {
+  overflow-x: hidden;
+}
+
 section {
   margin: 0 auto;
   padding: 4rem 6rem;
@@ -45,7 +49,7 @@ section {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   section {
-    padding: 3rem 4rem;
+    padding: 1rem;
   }
 }
 
@@ -119,8 +123,7 @@ header .flex {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   header .flex {
-    padding: 2rem;
-    background-color: pink;
+    padding: 1rem 2rem;
   }
 }
 header .flex .logo img {
@@ -258,7 +261,12 @@ header .flex .icons #menu-bars {
   width: 100%;
   padding-top: 7rem;
 }
+.home .home-slider {
+  max-width: 100%;
+  overflow: hidden;
+}
 .home .home-slider .slide {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,6 +283,7 @@ header .flex .icons #menu-bars {
   top: 50%;
   left: 10%;
   transform: translateY(-50%);
+  padding: 1rem;
 }
 .home .home-slider .slide .content.second h3,
 .home .home-slider .slide .content.second p,
@@ -329,6 +338,7 @@ header .flex .icons #menu-bars {
 @media (min-width: 350px) and (max-width: 767px) {
   .dishes .box-container {
     grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
   }
 }
 .dishes .box-container .box {
@@ -348,7 +358,7 @@ header .flex .icons #menu-bars {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .dishes .box-container .box img {
-    height: 12rem;
+    height: 10rem;
   }
 }
 .dishes .box-container .box h3 {
@@ -359,6 +369,7 @@ header .flex .icons #menu-bars {
 @media (min-width: 350px) and (max-width: 767px) {
   .dishes .box-container .box h3 {
     font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
 }
 .dishes .box-container .box .price {
@@ -410,6 +421,15 @@ header .flex .icons #menu-bars {
   font-size: 2rem;
   color: #151515;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .dishes .box-container .box .fa-heart,
+  .dishes .box-container .box .fa-bookmark {
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
+  }
+}
 .dishes .box-container .box .fa-heart:hover,
 .dishes .box-container .box .fa-bookmark:hover {
   background: #df2929;
@@ -426,11 +446,18 @@ header .flex .icons #menu-bars {
   background: url("../images/beauty-4993469_1280.jpg") center/cover no-repeat fixed;
   background-color: rgba(0, 0, 0, 0.356);
   background-blend-mode: color;
-  min-height: 53vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 10rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .about {
+    width: 100%;
+    min-height: 45vh;
+    margin-top: 5rem;
+  }
 }
 .about .content {
   text-align: center;
@@ -469,6 +496,11 @@ header .flex .icons #menu-bars {
   overflow: hidden;
   position: relative;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .image {
+    height: 18rem;
+  }
+}
 .menu .box-container .box .image img {
   height: 100%;
   width: 100%;
@@ -489,6 +521,14 @@ header .flex .icons #menu-bars {
   border-radius: 50%;
   color: #151515;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .image .fa-heart {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 1.8rem;
+  }
+}
 .menu .box-container .box .image .fa-heart:hover {
   background: #df2929;
   color: #fff;
@@ -501,17 +541,21 @@ header .flex .icons #menu-bars {
   color: #151515;
   font-size: 1.7rem;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .content h3 {
+    font-size: 1.5rem;
+  }
+}
 .menu .box-container .box .content p {
   color: #b2b2b2;
   font-size: 1.4rem;
   padding: 0.5rem 0;
   line-height: 1.5;
 }
-.menu .box-container .box .content .pice {
-  color: #df2929;
-  margin-left: 1rem;
-  font-size: 1.8rem;
-  font-weight: bolder;
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .content p {
+    font-size: 1.2rem;
+  }
 }
 .menu .box-container .box .content .stars {
   padding-bottom: 1rem;
@@ -520,12 +564,35 @@ header .flex .icons #menu-bars {
   font-size: 1.7rem;
   color: #df2929;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .content .stars i {
+    font-size: 1.4rem;
+  }
+}
+.menu .box-container .box .content .btm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.menu .box-container .box .content .btm .pice {
+  color: #df2929;
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu .box-container .box .content .btm .pice {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
 
 .review .swiper-wrapper {
-  width: 100%;
+  max-width: 100%;
 }
 .review .swiper-wrapper .slide {
-  max-width: 100%;
+  width: 100%;
   padding: 2rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   border: 0.1rem solid rgba(0, 0, 0, 0.2);
@@ -534,11 +601,22 @@ header .flex .icons #menu-bars {
   min-height: 28rem;
   flex-direction: column;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .review .swiper-wrapper .slide {
+    padding: 1rem;
+    min-height: 25rem;
+  }
+}
 .review .swiper-wrapper .slide p {
   font-size: 1.5rem;
   line-height: 1.8;
   color: #b2b2b2;
   margin-top: auto;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .review .swiper-wrapper .slide p {
+    font-size: 1.3rem;
+  }
 }
 .review .swiper-wrapper .slide .user {
   display: flex;
@@ -553,14 +631,30 @@ header .flex .icons #menu-bars {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .review .swiper-wrapper .slide .user img {
+    height: 5rem;
+    width: 5rem;
+  }
+}
 .review .swiper-wrapper .slide .user h3 {
   color: #151515;
   font-size: 2rem;
   padding-bottom: 0.5rem;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .review .swiper-wrapper .slide .user h3 {
+    font-size: 1.7rem;
+  }
+}
 .review .swiper-wrapper .slide .user i {
   font-size: 1.3rem;
   color: #df2929;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .review .swiper-wrapper .slide .user i {
+    font-size: 1.2rem;
+  }
 }
 
 .footer {
@@ -574,10 +668,8 @@ header .flex .icons #menu-bars {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .footer .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
   }
 }
 .footer .box-container .box_logo {
@@ -585,6 +677,11 @@ header .flex .icons #menu-bars {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .footer .box-container .box_logo {
+    display: none;
+  }
 }
 .footer .box-container .box_logo img {
   height: 5rem;
@@ -598,11 +695,21 @@ header .flex .icons #menu-bars {
   font-size: 1.6rem;
   color: #151515;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .footer .box-container .box h3 {
+    font-size: 1.4rem;
+  }
+}
 .footer .box-container .box a {
   display: block;
   padding: 0.8rem 0;
   font-size: 1.5rem;
   color: #b2b2b2;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .footer .box-container .box a {
+    font-size: 1.3rem;
+  }
 }
 .footer .box-container .box a:hover {
   color: #151515;
@@ -616,6 +723,11 @@ header .flex .icons #menu-bars {
   padding: 0.5rem;
   padding-top: 1.5rem;
   margin-top: 1.5rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .footer .credit {
+    font-size: 1.3rem;
+  }
 }
 .footer .credit span {
   color: #151515;
