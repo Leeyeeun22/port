@@ -322,6 +322,11 @@ header .flex .icons #menu-bars {
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .home .home-slider .slide .image {
+    height: 35vh;
+  }
+}
 .home .home-slider .slide .image img {
   width: 100%;
   height: 100%;
