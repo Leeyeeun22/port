@@ -5,6 +5,7 @@
 $body-color: #eee;
 $black: #161616;
 $light-black: #414141;
+$light-black2: #767676;
 $light-color: #ddd;
 $tag-color: #2153f7;
 $main-color: #c41414;
@@ -46,11 +47,24 @@ section {
     margin: 0 auto;
     padding: 6rem 3rem;
     max-width: 1200px;
+
+    @include mobile {
+        padding: 3rem;
+    }
 }
 
-h2 {
-    font-family: $font-alfa;
-    color: $black;
+.title {
+    h2 {
+        font-family: $font-alfa;
+        color: $black;
+        font-size: 5rem;
+        font-weight: 300;
+        padding: 3rem 0;
+
+        span {
+            color: $main-color;
+        }
+    }
 }
 
 .header {
@@ -77,16 +91,16 @@ h2 {
 
         .logo {
             color: $black;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bolder;
         }
 
         .navbar {
             a {
                 color: $black;
-                font-size: 1.6rem;
+                font-size: 2rem;
                 display: inline-block;
-                margin-left: 1rem;
+                margin-left: 1.3rem;
 
                 &:hover {
                     color: $main-color;
@@ -138,8 +152,10 @@ h2 {
             }
 
             h2 {
+                font-family: $font-alfa;
+                color: $black;
                 position: relative;
-                font-size: 5rem;
+                font-size: 6rem;
                 z-index: 1;
                 line-height: 1;
                 font-family: 400;
@@ -200,6 +216,7 @@ h2 {
 
 /* 스크롤 마우스 아이콘 애니메이션 */
 @keyframes sdb {
+
     0%,
     100% {
         transform: translate(0, 0);
@@ -225,6 +242,10 @@ h2 {
         gap: 5rem;
         flex-wrap: wrap;
 
+        @include mobile{
+            gap:1rem;
+        }
+
         .img {
             flex: 1 1 40rem;
 
@@ -247,7 +268,9 @@ h2 {
             }
 
             h2 {
-                font-size: 4rem;
+                font-family: $font-alfa;
+                color: $black;
+                font-size: 5rem;
                 font-weight: 300;
                 margin-bottom: 2rem;
                 padding: 2rem 0;
@@ -324,18 +347,47 @@ h2 {
     }
 }
 
-.portfolio {
-    h2 {
-        font-size: 5rem;
-        font-weight: 300;
-        margin-bottom: 2rem;
-        padding: 2rem 0;
+.work {
+    .work_flex {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
 
-        span {
-            color: $main-color;
+        .box {
+            padding-left:2rem;
+            border-left: .7rem solid $black;
+
+            h3{
+                font-size: 2.2rem;
+                color:$black;
+                span{
+                    color:$light-black2;
+                }
+            }
+
+            p{
+                font-size: 1.6rem;
+                color:$black;
+                line-height: 1.8;
+                padding-top:1rem;
+
+                span{
+                    color:$main-color;
+                }
+
+                &.work_si{
+                    font-size: 1.6rem;
+                    //border-bottom: .1rem dashed $black;
+                    font-weight: bolder;
+                }
+            }
         }
     }
+}
 
+.portfolio {
     .port_container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -435,8 +487,8 @@ h2 {
                 margin-top: 2rem;
                 width: 100%;
 
-                @include mobile{
-                padding:2rem;
+                @include mobile {
+                    padding: 2rem;
                 }
             }
         }
@@ -496,8 +548,10 @@ h2 {
                 font-family: $font-ru;
             }
         }
+
         /* top_bar end */
     }
+
     /* popup_box end */
 }
 

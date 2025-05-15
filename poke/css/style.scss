@@ -152,8 +152,8 @@ section {
             align-items: center;
             gap: 1rem;
 
-            @include mobile{
-                                display: block;
+            @include mobile {
+                display: block;
                 position: absolute;
                 top: 100%;
                 right: 0;
@@ -357,8 +357,8 @@ section {
                 height: 40rem;
                 object-fit: contain;
 
-                @include mobile{
-                    height:35rem;
+                @include mobile {
+                    height: 35rem;
                 }
             }
         }
@@ -370,7 +370,7 @@ section {
             h2 {
                 font-size: 6rem;
 
-                @include mobile{
+                @include mobile {
                     font-size: 5rem;
                 }
             }
@@ -401,9 +401,9 @@ section {
         align-items: center;
         justify-content: center;
 
-        @include mobile{
-grid-template-columns: repeat(2, 1fr);        
-}
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
 
         .box {
@@ -515,8 +515,8 @@ grid-template-columns: repeat(2, 1fr);
                 height: 65rem;
                 object-fit: cover;
 
-                @include mobile{
-                    height:50rem;
+                @include mobile {
+                    height: 50rem;
                 }
             }
         }
@@ -534,7 +534,7 @@ grid-template-columns: repeat(2, 1fr);
                 color: $banner-color;
                 font-family: $cafe-font;
 
-                @include mobile{
+                @include mobile {
                     font-size: 4.5rem;
                 }
             }
@@ -545,7 +545,7 @@ grid-template-columns: repeat(2, 1fr);
                 font-family: $Ink-font;
                 margin-bottom: 3rem;
 
-                @include mobile{
+                @include mobile {
                     font-size: 2.5rem;
                 }
             }
@@ -631,111 +631,111 @@ grid-template-columns: repeat(2, 1fr);
 }
 
 .reviews {
-  background: url('../images/review_bg.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin-top: 7rem;
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .row {
+    background: url('../images/review_bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 7rem;
+    min-height: 70vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
-    align-items: stretch; // 핵심!
-    min-height: 40vh; // 높이 고정보단 유연하게
+    align-items: center;
 
-    .content {
-      flex: 1 1 40rem;
-      padding: 2rem 2.5rem;
-      background-color: $white;
-      box-shadow: $box-shadow;
-      border-radius: .5rem;
-      user-select: none;
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        align-items: stretch; // 핵심!
+        min-height: 40vh; // 높이 고정보단 유연하게
 
-      h3 {
-        font-size: 2.5rem;
-        color: $black;
-        margin-bottom: 1.5rem;
-        font-family: $cafe-font;
+        .content {
+            flex: 1 1 40rem;
+            padding: 2rem 2.5rem;
+            background-color: $white;
+            box-shadow: $box-shadow;
+            border-radius: .5rem;
+            user-select: none;
 
-        @include mobile{
-            font-size: 2rem;
+            h3 {
+                font-size: 2.5rem;
+                color: $black;
+                margin-bottom: 1.5rem;
+                font-family: $cafe-font;
+
+                @include mobile {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                line-height: 2;
+                font-size: 1.7rem;
+                color: $sub-color;
+            }
         }
-      }
 
-      p {
-        line-height: 2;
-        font-size: 1.7rem;
-        color: $sub-color;
-      }
+        .slider-container {
+            flex: 1 1 40rem;
+            display: flex; // 핵심!
+            height: auto;
+
+            .slide {
+                flex: 1; // 전체 높이 채움
+                height: 100%;
+                padding: 2rem 2.5rem;
+                background-color: $white;
+                box-shadow: $box-shadow;
+                border-radius: .5rem;
+                user-select: none;
+                display: none;
+                flex-direction: column;
+                justify-content: space-between;
+
+                &.active {
+                    display: flex;
+                    animation: slide 0.4s ease-out backwards;
+                }
+
+                p {
+                    line-height: 1.8;
+                    font-size: 1.6rem;
+                    color: $sub-color;
+                    animation: slide 0.4s 0.2s ease-out backwards;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    padding-top: 1.5rem;
+                    margin-top: 1.5rem;
+                    border-top: 0.1rem solid $sub-color;
+                    animation: slide 0.4s 0.4s ease-out backwards;
+
+                    img {
+                        height: 6rem;
+                        width: 6rem;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                h3 {
+                    font-size: 1.8rem;
+                    color: $black;
+                    margin-bottom: 0.2rem;
+                }
+
+                .stars {
+                    i {
+                        color: $main-color;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
     }
-
-    .slider-container {
-      flex: 1 1 40rem;
-      display: flex; // 핵심!
-      height: auto;
-
-      .slide {
-        flex: 1; // 전체 높이 채움
-        height: 100%;
-        padding: 2rem 2.5rem;
-        background-color: $white;
-        box-shadow: $box-shadow;
-        border-radius: .5rem;
-        user-select: none;
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-
-        &.active {
-          display: flex;
-          animation: slide 0.4s ease-out backwards;
-        }
-
-        p {
-          line-height: 1.8;
-          font-size: 1.6rem;
-          color: $sub-color;
-          animation: slide 0.4s 0.2s ease-out backwards;
-        }
-
-        .user {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          padding-top: 1.5rem;
-          margin-top: 1.5rem;
-          border-top: 0.1rem solid $sub-color;
-          animation: slide 0.4s 0.4s ease-out backwards;
-
-          img {
-            height: 6rem;
-            width: 6rem;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-        }
-
-        h3 {
-          font-size: 1.8rem;
-          color: $black;
-          margin-bottom: 0.2rem;
-        }
-
-        .stars {
-          i {
-            color: $main-color;
-            font-size: 1.6rem;
-          }
-        }
-      }
-    }
-  }
 }
 
 
@@ -774,87 +774,87 @@ grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.footer{
+.footer {
     background-color: $sub-color;
 
-    .flex{
+    .flex {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom:2rem;
-        border-bottom:.1rem solid $light-color;
+        margin-bottom: 2rem;
+        border-bottom: .1rem solid $light-color;
         padding-bottom: 2rem;
 
-        @include mobile{
+        @include mobile {
             flex-flow: column;
             align-items: center;
         }
 
-        .logo{
+        .logo {
             font-size: 2rem;
-            color:$white;
+            color: $white;
             font-family: $cafe-font;
             font-size: 2rem;
 
-            &:hover{
-                color:$main-color;
+            &:hover {
+                color: $main-color;
             }
         }
 
-        .links{
+        .links {
 
-            a{
-                margin:0 1rem;
-                color:$white;
+            a {
+                margin: 0 1rem;
+                color: $white;
                 font-size: 1.5rem;
                 font-family: $cafe-font;
 
-                &:hover{
-                    color:$main-color;
+                &:hover {
+                    color: $main-color;
                 }
 
-                @include mobile{
+                @include mobile {
                     display: block;
                     text-align: center;
-                    margin:2rem 0;
+                    margin: 2rem 0;
                     font-size: 1.7rem;
                 }
             }
         }
 
-        .extra-link{
-            color:$white;
+        .extra-link {
+            color: $white;
             font-size: 1.5rem;
             font-family: $cafe-font;
 
-            &:hover{
-                color:$main-color;
+            &:hover {
+                color: $main-color;
             }
         }
     }
 
-            .credit{
-            display: flex;
-            gap:2rem;
-            justify-content: space-between;
+    .credit {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
 
-            p{
-                font-size: 1.7rem;
-                color:$white;
+        p {
+            font-size: 1.7rem;
+            color: $white;
 
-                span{
-                    color:$main-color;
-                }
-            }
-
-            a{
-                font-size: 1.7rem;
-                color:$light-color;
-                margin-left:1.5rem;
-
-                &:hover{
-                    color:$white;
-                }
+            span {
+                color: $main-color;
             }
         }
+
+        a {
+            font-size: 1.7rem;
+            color: $light-color;
+            margin-left: 1.5rem;
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }
 }

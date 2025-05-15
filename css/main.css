@@ -36,10 +36,21 @@ section {
   padding: 6rem 3rem;
   max-width: 1200px;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  section {
+    padding: 3rem;
+  }
+}
 
-h2 {
+.title h2 {
   font-family: "Alfa Slab One", serif;
   color: #161616;
+  font-size: 5rem;
+  font-weight: 300;
+  padding: 3rem 0;
+}
+.title h2 span {
+  color: #c41414;
 }
 
 .header {
@@ -65,14 +76,14 @@ h2 {
 }
 .header .flex .logo {
   color: #161616;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bolder;
 }
 .header .flex .navbar a {
   color: #161616;
-  font-size: 1.6rem;
+  font-size: 2rem;
   display: inline-block;
-  margin-left: 1rem;
+  margin-left: 1.3rem;
 }
 .header .flex .navbar a:hover {
   color: #c41414;
@@ -117,8 +128,10 @@ h2 {
   z-index: 1;
 }
 .banner .flex .banner_txt h2 {
+  font-family: "Alfa Slab One", serif;
+  color: #161616;
   position: relative;
-  font-size: 5rem;
+  font-size: 6rem;
   z-index: 1;
   line-height: 1;
   font-family: 400;
@@ -191,6 +204,11 @@ h2 {
   gap: 5rem;
   flex-wrap: wrap;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .about .flex {
+    gap: 1rem;
+  }
+}
 .about .flex .img {
   flex: 1 1 40rem;
 }
@@ -213,7 +231,9 @@ h2 {
   }
 }
 .about .flex .content h2 {
-  font-size: 4rem;
+  font-family: "Alfa Slab One", serif;
+  color: #161616;
+  font-size: 5rem;
   font-weight: 300;
   margin-bottom: 2rem;
   padding: 2rem 0;
@@ -280,15 +300,38 @@ h2 {
   }
 }
 
-.portfolio h2 {
-  font-size: 5rem;
-  font-weight: 300;
-  margin-bottom: 2rem;
-  padding: 2rem 0;
+.work .work_flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
 }
-.portfolio h2 span {
+.work .work_flex .box {
+  padding-left: 2rem;
+  border-left: 0.7rem solid #161616;
+}
+.work .work_flex .box h3 {
+  font-size: 2.2rem;
+  color: #161616;
+}
+.work .work_flex .box h3 span {
+  color: #767676;
+}
+.work .work_flex .box p {
+  font-size: 1.6rem;
+  color: #161616;
+  line-height: 1.8;
+  padding-top: 1rem;
+}
+.work .work_flex .box p span {
   color: #c41414;
 }
+.work .work_flex .box p.work_si {
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+
 .portfolio .port_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
