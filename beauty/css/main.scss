@@ -192,6 +192,10 @@ section {
                 img {
                     width: 3.4rem;
                     border-radius: 50%;
+
+                    @include mobile{
+                        width:3rem;
+                    }
                 }
             }
 
@@ -199,6 +203,15 @@ section {
                 color: #818181;
                 font-size: 2.5rem;
                 margin-left: 2rem;
+                cursor: pointer;
+
+                &:hover{
+                    color:$black;
+                }
+
+                @include mobile{
+                    font-size: 1.8rem;
+                }
             }
         }
 
@@ -270,53 +283,97 @@ section {
             }
         }
     }
+}
 
-    .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5rem;
-        padding: 2rem 0;
+.nav {
+        position: relative;
 
-        @include mobile {
-            display: none;
+        @include mobile{
+            &.active{
+position: fixed;
+            top:0; right:0; left:0;
+            z-index: 1000;
+            background: $white;
+            box-shadow: $box-shadow;
+            }
+            
         }
 
-        a {
-            font-size: 1.6rem;
-            color: $black;
-            font-weight: bolder;
+        .navbar {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); // 8칸 균등 분할
+            text-align: center;
+            padding: 2rem 6rem;
+            gap:1rem;
 
-            &:hover {
-                color: $main-color;
+            @include mobile{
+                padding:2rem 1rem;
+                gap:.5rem;
+            }
+
+            a {
+                font-size: 1.6rem;
+                color: $black;
+                font-weight: bolder;
+
+                &:hover {
+                    color: $main-color;
+                }
+
+                @include mobile{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .nav_open {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: $white;
+            z-index: 200;
+            grid-template-columns: repeat(8, 1fr); // 위랑 동일한 칸수
+            padding: 2rem 6rem;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            gap:1rem;
+
+            @include mobile {
+    padding:2rem 1rem;
+    gap:.5rem;
+  }
+
+            .box {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                border-right: .1rem solid #dddddd;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                a {
+                    font-size: 1.4rem;
+                    color: $black;
+                    font-weight: bolder;
+                    display: block;
+                    text-align: center;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+
+                    @include mobile{
+                        font-size: 1rem;
+                    }
+                }
             }
         }
     }
-}
-
-.mobile_nav {
-    width: 100%;
-    display: none;
-
-    @include mobile {
-        display: block;
-    }
-
-    .navbar {
-        background: $white;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        gap: 1rem;
-
-        a {
-            font-size: 1.4rem;
-            color: $black;
-        }
-    }
-}
 
 #search-form {
     position: fixed;
@@ -331,6 +388,10 @@ section {
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
+
+    @include mobile{
+        padding:1rem 3rem;
+    }
 
     &.active {
         top: 0;
@@ -598,7 +659,7 @@ section {
         width: 100%;
         min-height: 45vh;
         margin-top: 5rem;
-        padding:3rem;
+        padding: 3rem;
     }
 
     .content {
@@ -803,12 +864,21 @@ section {
                 width: 100%;
                 height: 30rem;
                 border-radius: 1rem;
+
+                @include mobile{
+                    height:25rem;
+                    width:100%;
+                }
             }
 
             h4 {
                 font-size: 2rem;
                 color: $black;
                 margin-top: 1.5rem;
+
+                @include mobile{
+                    font-size: 1.8rem;
+                }
             }
 
             p {
@@ -833,7 +903,7 @@ section {
     flex-direction: column;
     gap: 3rem;
 
-    @include mobile{
+    @include mobile {
         min-height: 50vh;
     }
 
@@ -841,7 +911,7 @@ section {
         color: $white;
         font-size: 3rem;
 
-        @include mobile{
+        @include mobile {
             font-size: 2.5rem;
         }
     }
@@ -867,7 +937,7 @@ section {
             border-radius: 3rem;
             font-size: 1.5rem;
 
-            @include mobile{
+            @include mobile {
                 min-width: 25rem;
             }
         }

@@ -1,5 +1,5 @@
 // let menu = document.querySelector('#menu-bars');
-let navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.navbar');
 let header = document.querySelector('.header');
 
 // menu.onclick = () => {
@@ -7,7 +7,20 @@ let header = document.querySelector('.header');
 //   navbar.classList.toggle('active');
 // }
 
-// 변수 
+const nav = document.querySelector('.nav');
+const navOpen = document.querySelector('.nav_open');
+
+// 마우스가 nav 전체 안에 들어오면 열기
+nav.addEventListener('mouseenter', () => {
+  navOpen.style.display = 'grid';
+});
+
+// 마우스가 nav를 벗어나면 닫기
+nav.addEventListener('mouseleave', () => {
+  navOpen.style.display = 'none';
+});
+
+
 let section = document.querySelectorAll('section');
 
 window.onscroll = () => {
@@ -16,18 +29,21 @@ window.onscroll = () => {
 
   if (window.scrollY > 0) {
     header.classList.add('active');
+    nav.classList.add('active');
   } else {
     header.classList.remove('active');
+    nav.classList.remove('active');
   }
 }
 
-// document.querySelector('#search-icons').onclick = () => {
-//   document.querySelector('#search-form').classList.toggle('active');
-// }
+document.querySelector('#search-icons').onclick = () => {
+  document.querySelector('#search-form').classList.toggle('active');
+}
 
-// document.querySelector('#close').onclick = () => {
-//   document.querySelector('#search-form').classList.remove('active');
-// }
+document.querySelector('#close').onclick = () => {
+  document.querySelector('#search-form').classList.remove('active');
+}
+
 
 var swiper = new Swiper(".home-slider", {
   // spaceBetween : 30,

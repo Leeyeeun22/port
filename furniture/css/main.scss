@@ -1,0 +1,548 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+@import "../../css/mixin";
+
+@font-face {
+    font-family: 'Ownglyph_corncorn-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font : 'Ownglyph_corncorn-Rg',
+serif;
+
+$white: #fff;
+$black: #2e2e2e;
+$bg-color: #eeebe4;
+$light-black: #5a5a5a;
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+$main-color: #dc794e;
+$border: .25rem solid $black;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    transition: all .2s linear;
+    font-family: $font;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include desktop {
+        font-size: 60%;
+    }
+
+    @include tablet {
+        font-size: 57%;
+    }
+
+    @include mobile {
+        font-size: 52%;
+    }
+}
+
+body {
+    overflow-x: hidden;
+    background: $bg-color;
+}
+
+section {
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    max-width: 1200px;
+
+    @include mobile {
+        padding: 2rem 3rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-size: 2rem;
+    background: $black;
+    border: $border;
+    color: $white;
+    padding: .8rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: $bg-color;
+        color: $black;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    &.active {
+        background: $white;
+        backdrop-filter: blur(2rem);
+    }
+
+    .flex {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mobile {
+            padding: 2rem 3rem;
+        }
+
+        .logo {
+            font-size: 2.6rem;
+            color: $black;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: $bg-color;
+                    border-top: $border;
+                    border-bottom: $border;
+
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+                &.active {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+
+            a {
+                font-size: 2.1rem;
+                color: $black;
+
+                &:hover {
+                    color: $main-color;
+                }
+
+                @include mobile {
+                    display: block;
+                    width: 100%;
+                    margin: 2rem;
+                    text-align: center;
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+
+            i {
+                color: $light-black;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: $main-color;
+                    transform: rotate(360deg);
+                }
+            }
+
+            #menu-btn {
+                display: none;
+                color: $light-black;
+                font-size: 2rem;
+                cursor: pointer;
+
+                @include mobile {
+                    display: inline-block;
+                }
+
+                &:hover {
+                    color: $main-color;
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    margin-top: 5rem;
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        min-height: 80vh;
+        padding: 0 4rem;
+
+        @include mobile {
+            padding: 4rem 3rem;
+            flex-direction: column-reverse;
+        }
+
+        .img {
+            flex: 1 1 40rem;
+
+            @include mobile {
+                flex: 1 1 30rem;
+            }
+
+            img {
+                width: 100%;
+                height: 35rem;
+                border-top-left-radius: 20rem;
+                border-top-right-radius: 10rem;
+                border-bottom-left-radius: 20rem;
+                border-bottom-right-radius: 25rem;
+
+                @include mobile {
+                    width: 100%;
+                    height: 30rem;
+                }
+            }
+        }
+
+        .banner_txt {
+            flex: 1 1 30rem;
+            text-align: left;
+
+            h2 {
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                line-height: 2;
+
+            }
+        }
+    }
+}
+
+.vector {
+    margin-top: 3rem;
+
+    .flex {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 10rem);
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5rem;
+
+        .box {
+            text-align: center;
+            width: 100%;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 6rem;
+                object-fit: contain;
+                cursor: pointer;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 54%;
+                width: 3rem;
+                height: 3rem;
+                z-index: -2;
+                border-radius: 50%;
+            }
+
+            &:nth-child(1)::after {
+                background: rgb(207, 182, 186);
+            }
+
+            &:nth-child(2)::after {
+                background: rgb(206, 196, 159);
+            }
+
+            &:nth-child(3)::after {
+                background: rgb(211, 189, 164);
+            }
+
+            &:nth-child(4)::after {
+                background: rgb(179, 190, 175);
+            }
+
+            &:nth-child(5)::after {
+                background: rgb(183, 191, 196);
+            }
+
+            &:nth-child(6)::after {
+                background: rgb(201, 195, 202);
+            }
+
+            .content {
+                span {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+    }
+}
+
+.about {
+    margin-top: 5rem;
+    padding: 2rem 6rem;
+
+        @include mobile{
+        padding:2rem 3rem;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+        padding: 2rem 4rem;
+
+        .img {
+            flex: 1 1 40rem;
+
+            img {
+                height: 40rem;
+                width: 100%;
+                object-fit: cover;
+                border-top-left-radius: 30rem;
+                border-top-right-radius: 20rem;
+                border-bottom-left-radius: 5rem;
+                border-bottom-right-radius: 15rem;
+
+                @include mobile {
+                    height: 30rem;
+                }
+            }
+        }
+
+        .content {
+            flex: 1 1 40rem;
+
+            h3 {
+                font-size: 2.5rem;
+                color: $black;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1.9rem;
+                line-height: 2;
+                color: $black;
+            }
+        }
+    }
+}
+
+.about_se {
+    margin-top: 3rem;
+    padding: 2rem 6rem;
+
+    @include mobile{
+        padding:2rem 3rem;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        flex-wrap: wrap;
+       padding: 2rem 4rem;
+
+        @include mobile {
+            flex-direction: column-reverse;
+        gap: 4rem;
+
+        }
+
+        .img {
+            flex: 1 1 40rem;
+
+            @include mobile{
+                flex: 1 1 30rem;
+            }
+
+            img {
+                height: 40rem;
+                width: 100%;
+                object-fit: cover;
+                border-top-left-radius: 15rem;
+                border-top-right-radius: 30rem;
+                border-bottom-left-radius: 10rem;
+                border-bottom-right-radius: 8rem;
+
+                @include mobile {
+                    height: 30rem;
+                }
+            }
+        }
+
+        .content {
+            flex: 1 1 40rem;
+
+            h3 {
+                font-size: 2.5rem;
+                color: $black;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1.9rem;
+                line-height: 2;
+                color: $black;
+            }
+        }
+    }
+}
+
+.best {
+    margin-top: 5rem;
+    padding: 2rem 4rem;
+    text-align: center;
+
+        @include mobile{
+        padding:2rem 3rem;
+    }
+
+    .btn {
+        margin-top: 3rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.7rem;
+        margin-bottom: 5rem;
+
+        @include mobile{
+            margin-bottom: 2rem;
+        }
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 30rem);
+        align-items: stretch; // 추가
+        justify-content: center;
+        gap: 4rem;
+
+        @include mobile{
+            gap:2rem;
+        }
+
+        .box {
+            width: 100%;
+            padding: 1.8rem;
+            gap: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img {
+                width: 100%;
+                height: 20rem;
+                object-fit: cover;
+                border-radius: 2rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+                text-align: left;
+
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 1.7;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.fixed_bg {
+    background: url('../img/sofa-3538227_1280.jpg') no-repeat center/cover;
+    min-height: 40vh;
+    background-color: rgba(0, 0, 0, 0.356);
+    background-blend-mode: color;
+    background-attachment: fixed;
+    margin-top: 5rem;
+
+    @include mobile{
+        min-height: 25vh;
+    }
+}
+
+.circle {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+
+    .flex {
+        border: $border;
+        border-bottom: none;
+        padding: 2rem 4rem;
+        min-height: 20rem;
+        border-top-left-radius: 30rem;
+        border-top-right-radius: 30rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        h3 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.footer {
+    padding: 2rem 4rem;
+    border-top: $border;
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-size: 1.3rem;
+        }
+    }
+}
