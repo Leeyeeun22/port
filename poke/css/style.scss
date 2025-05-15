@@ -403,6 +403,7 @@ section {
 
         @include mobile {
             grid-template-columns: repeat(2, 1fr);
+            gap:3rem;
         }
 
 
@@ -413,8 +414,8 @@ section {
             cursor: pointer;
 
             img {
-                height: 18rem;
-                object-fit: contain;
+                height: 15rem;
+                object-fit: cover;
                 z-index: -1;
             }
 

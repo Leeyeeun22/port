@@ -1,3 +1,5 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "./mixin";
@@ -7,6 +9,7 @@ $black: #161616;
 $light-black: #414141;
 $light-black2: #767676;
 $light-color: #ddd;
+$white: #fff;
 $tag-color: #2153f7;
 $main-color: #c41414;
 $border: .2rem solid $black;
@@ -72,8 +75,12 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1005;
     background: transparent;
+
+    &.active{
+        background: $white;
+    }
 
     .flex {
         display: flex;
@@ -104,6 +111,50 @@ section {
 
                 &:hover {
                     color: $main-color;
+                }
+
+                @include mobile {
+                    display: block;
+                    font-size: 2.5rem;
+                    margin: 2.5rem 2rem;
+                    width: 100%;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+
+            @include mobile {
+                display: block;
+                position: absolute;
+                width: 50%;
+                min-height: 100vh;
+                top: 100%;
+                right: -100%;
+                background: $white;
+                z-index: 1005;
+                padding: 1rem;
+
+                &.active {
+                    right: 0;
+                    
+                }
+            }
+        }
+
+        #menuBtn {
+            font-size: 2rem;
+            color: $black;
+            cursor: pointer;
+            display: none;
+
+            @include mobile {
+                display: inline-block;
+                font-size: 3rem;
+
+                &.fa-xmark {
+                    transform: rotate(90deg);
                 }
             }
         }
@@ -242,8 +293,8 @@ section {
         gap: 5rem;
         flex-wrap: wrap;
 
-        @include mobile{
-            gap:1rem;
+        @include mobile {
+            gap: 1rem;
         }
 
         .img {
@@ -356,28 +407,29 @@ section {
         gap: 1rem;
 
         .box {
-            padding-left:2rem;
+            padding-left: 2rem;
             border-left: .7rem solid $black;
 
-            h3{
+            h3 {
                 font-size: 2.2rem;
-                color:$black;
-                span{
-                    color:$light-black2;
+                color: $black;
+
+                span {
+                    color: $light-black2;
                 }
             }
 
-            p{
+            p {
                 font-size: 1.6rem;
-                color:$black;
+                color: $black;
                 line-height: 2;
-                padding-top:1rem;
+                padding-top: 1rem;
 
-                span{
-                    color:$main-color;
+                span {
+                    color: $main-color;
                 }
 
-                &.work_si{
+                &.work_si {
                     font-size: 1.6rem;
                     //border-bottom: .1rem dashed $black;
                     font-weight: bolder;
@@ -603,5 +655,24 @@ section {
     100% {
         transform: scale(1);
         border-radius: 50% / 50%;
+    }
+}
+
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    /* top -110% 해서 안보이게 함 */
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+
+    &.active {
+        top: 0;
     }
 }

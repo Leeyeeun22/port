@@ -351,6 +351,7 @@ section {
 @media (min-width: 350px) and (max-width: 767px) {
   .best .menu_container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 }
 .best .menu_container .box {
@@ -360,9 +361,9 @@ section {
   cursor: pointer;
 }
 .best .menu_container .box img {
-  height: 18rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: -1;
 }
 .best .menu_container .box h3 {

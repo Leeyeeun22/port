@@ -3,8 +3,23 @@ const popup = document.querySelector(".popup");
 const openBtn = document.querySelector(".box");
 const closeBtn = document.querySelector(".popup .fa-xmark");
 const header = document.querySelector('.header .flex');
+const headermenu = document.querySelector('.header');
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.querySelector('.navbar');
+const dark = document.getElementById('search-form');
+
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('fa-xmark');
+    nav.classList.toggle('active');
+    dark.classList.toggle('active');
+    headermenu.classList.toggle('active');
+});
 
 window.onscroll = () =>{
+menuBtn.classList.remove('fa-xmark');
+    nav.classList.remove('active');
+    dark.classList.remove('active');
+    headermenu.classList.remove('active');
 
     /* 스크롤 내릴 시 header에 active 추가 */
     if(window.scrollY > 0){
