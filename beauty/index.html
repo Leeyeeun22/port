@@ -1,48 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="images/png" href="images/logo.png">
     <title>아름다움을 모아</title>
-
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <!-- css file link  (ctrl + /) -->
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 
 <body>
 
-    <!-- header section starts -->
     <header class="header">
-        <section class="flex">
-            <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+        <section class="top_menu">
+            <ul>
+                <li><a href="#" class="">회원가입</a></li>
+                <li><a href="#" class="">로그인</a></li>
+                <li><a href="#" class="">장바구니</a></li>
+                <li><a href="#" class="">찜하기</a></li>
+                <li><a href="#" class="">고객센터</a></li>
+            </ul>
+        </section>
 
-            <nav class="navbar">
-                <a class="active" href="#home">home</a>
-                <a href="#dishes">best</a>
-                <a href="#about">about</a>
-                <a href="#menu">menu</a>
-                <a href="#review">review</a>
-            </nav>
+        <section class="mobile_top">
+            <div class="flex">
+            <a class="mo_logo"><img src="images/logo.png" alt=""></a>
 
-            <div class="icons">
-                <i class="fas fa-search" id="search-icons"></i>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <i class="fas fa-bars" id="menu-bars"></i>
-
+            <div class="mo_box">
+                <i class="fa-solid fa-search"></i>
+<i class="fa-solid fa-circle-user"></i>
+            <i class="fa-solid fa-list"></i>
+            </div>
             </div>
         </section>
 
+        <section class="middle_menu">
+            <div class="flex">
+                <a href="#" class="logo">아름다움을 모아</a>
 
+                <div class="search_box">
+                    <form action="">
+                        <input type="text" name="query" placeholder="상품 또는 브랜드">
+                        <button type="submit" class="search_btn"><i class="fa-solid fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="menu_list">
+                    <a href="#">공지사항</a>
+                    <a href="#">이벤트</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navbar">
+            <a href="#home">스킨케어</a>
+            <a href="#dishes">메이크업</a>
+            <a href="#about">헤어케어</a>
+            <a href="#menu">바디케어</a>
+            <a href="#review">클렌징</a>
+            <a href="#review">선케어</a>
+            <a href="#review">뷰티소품</a>
+            <a href="#review">건강</a>
+        </nav>
     </header>
     <!-- header section ends -->
 
+    <div class="mobile_nav">
+        <nav class="navbar">
+            <a href="#home">스킨케어</a>
+            <a href="#dishes">메이크업</a>
+            <a href="#about">헤어케어</a>
+            <a href="#menu">바디케어</a>
+            <a href="#review">클렌징</a>
+            <a href="#review">선케어</a>
+            <a href="#review">뷰티소품</a>
+            <a href="#review">건강</a>
+        </nav>
+    </div>
+    
     <!-- search form -->
     <form action="" id="search-form">
         <input type="search" name="" placeholder="search here..." id="search-box">
@@ -62,7 +99,7 @@
                         <span>생기발랄한 컬러들 모음</span>
                         <h3>아모로맨틱 립스틱</h3>
                         <p>촉촉하고 생기발랄한 로맨틱으로 건조한 입술에 보습과 색감을 동시에 채워보세요.</p>
-                        <a href="#" class="btn_2">자세히 보기</a>
+                        <a href="#" class="btn">자세히 보기</a>
                     </div>
                     <div class="image">
                         <img src="images/banner_1.jpg" alt="">
@@ -70,15 +107,15 @@
                 </div>
 
                 <div class="swiper-slide slide">
-                    <div class="content second">
+                    <div class="content">
                         <span>은은한 더티핑크색상 출시</span>
                         <h3>더티핑크 화장품 세트</h3>
                         <p>핑크 좋아하는 사람들 주목!<br>
                             질리지않는 더티핑크 컨셉의 화장품 세트가 출시되었습니다.</p>
-                        <a href="#" class="btn_2">주문하기</a>
+                        <a href="#" class="btn">주문하기</a>
                     </div>
                     <div class="image">
-                        <img src="images/banner_2.jpg" alt="">
+                        <img src="images/banner_5.jpg" alt="">
                     </div>
                 </div>
 
@@ -87,10 +124,10 @@
                         <span>머릿결 찰랑찰랑</span>
                         <h3>아모어노브 트리트먼트</h3>
                         <p>노워시 트리트먼트로 머리를 감지않고 바로 사용할 경우 찰랑찰랑한 머릿결을 만들 수 있습니다.</p>
-                        <a href="#" class="btn">자세히 보기</a>
+                        <a href="#" class="btn_2">자세히 보기</a>
                     </div>
                     <div class="image">
-                        <img src="images/banner_4.jpg" lt="">
+                        <img src="images/banner_2.jpg" lt="">
                     </div>
                 </div>
             </div>
@@ -102,92 +139,87 @@
     </div>
     <!-- home section ends -->
 
-
     <!-- dishes section starts -->
-
     <section class="dishes" id="dishes">
 
-        <h3 class="sub-heading"> 최대판매량 </h3>
-        <h1 class="heading"> BEST 메뉴 </h3>
+        <div class="menu_title">
+            <div class="title">
+                <h1 class="title_top"> BEST 메뉴 </h3>
+            </div>
+            <a href="#" class="more">더보기 ></a>
+        </div>
 
-            <div class="box-container">
-                <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
                     <img src="images/dis_1.jpg" alt="">
-                    <h3>가을가을한 아이팔레트</h3>
-                    <div class="price">
+                </div>
+                <h3>가을가을한 아이팔레트</h3>
+                <div class="price">
+                    <div class="pr_box">
                         <span class="sale">10%</span>
                         <span class="under">13,000</span>
                         <span class="main_price">12,000원</span>
                     </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                </div>
 
-                <div class="box">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
+                </div>
+                <a href="#" class="btn">카트 담기</a>
+            </div>
+
+            <div class="box">
+                <div class="image">
                     <img src="images/dis_2.jpg" alt="">
-                    <h3>트리핑클 아이섀도우</h3>
-                    <div class="price">
-                        <span class="sale">20%</span>
-                        <span class="under">11,000</span>
+
+                </div>
+                <h3>트리핑클 아이섀도우</h3>
+                <div class="price">
+                    <div class="pr_box">
+                        <span class="sale">10%</span>
+                        <span class="under">10,000</span>
                         <span class="main_price">9,000원</span>
                     </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
+                    <a href="#" class="fa-regular fa-heart"></a>
                 </div>
+                <a href="#" class="btn">카트 담기</a>
+            </div>
 
-                <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
+            <div class="box">
+                <div class="image">
                     <img src="images/dis_3.jpg" alt="">
-                    <h3>[only 공식몰] 아모립스틱</h3>
-                    <div class="price">
-                        <span class="sale">10%</span>
-                        <span class="under">13,000</span>
-                        <span class="main_price">12,000원</span>
-                    </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                </div>
 
-                <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
+                </div>
+                <h3>[only 공식몰] 아모립스틱</h3>
+                <div class="price">
+                    <div class="pr_box">
+                        <span class="sale">20%</span>
+                        <span class="under">13,000</span>
+                        <span class="main_price">11,000원</span>
+                    </div>
+
+                    <a href="#" class="fa-regular fa-heart"></a>
+                </div>
+                <a href="#" class="btn">카트 담기</a>
+            </div>
+
+            <div class="box">
+                <div class="image">
                     <img src="images/dis_4.jpg" alt="">
-                    <h3>착한열매 아이섀도우</h3>
-                    <div class="price">
+
+                </div>
+                <h3>착한열매 아이섀도우</h3>
+                <div class="price">
+                    <div class="pr_box">
                         <span class="sale">30%</span>
                         <span class="under">13,000</span>
                         <span class="main_price">10,000원</span>
                     </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                </div>
 
-                <div class="box">
                     <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
-                    <img src="images/dis_5.jpg" alt="">
-                    <h3>모자이크 컨실러</h3>
-                    <div class="price">
-                        <span class="sale">10%</span>
-                        <span class="under">8,000</span>
-                        <span class="main_price">7,000원</span>
-                    </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
                 </div>
-                <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fa-solid fa-bookmark"></a>
-                    <img src="images/dis_8.jpg" alt="">
-                    <h3>청량한 페디네일</h3>
-                    <div class="price">
-                        <span class="sale">10%</span>
-                        <span class="under">5,000</span>
-                        <span class="main_price">4,000원</span>
-                    </div>
-                    <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                </div>
+                <a href="#" class="btn">카트 담기</a>
             </div>
+        </div>
     </section>
     <!-- dishes section ends -->
 
@@ -197,15 +229,14 @@
 
         <div class="content">
             <h2>아름다움을 모아</h2>
-            <p>아모(AM)는 고객님들의 아름다움을 모아주기 위해 노력하는 브랜드입니다.</p>
+            <p>아모(AM)는 고객님들의 아름다움을 모아주기 위해 노력하는 브랜드입니다.<br>
+                다양하고 트렌디한 화장품을 통해 진정한 모습을 찾을 수 있도록 노력하겠습니다.</p>
             <a href="#" class="btn_2">자세히 보기</a>
         </div>
 
     </div>
-    <!-- about section ends -->
 
     <!-- menu section starts -->
-
     <section class="menu" id="menu">
 
         <h3 class="sub-heading"> today </h3>
@@ -216,22 +247,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_1.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>스프링 아이섀도우</h3>
                     <p>봄시즌 기념 출시한 핑크발랄한 섀도우! 봄라이트분들이 사용하시면 정말 예쁘답니다.</p>
-                    <div class="btm">
-                        <span class="pice">12,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">12,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -239,22 +264,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_2.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>레인보우 아이섀도우</h3>
                     <p>알록달록한 무지개색 아이섀도우입니다. 다양한 컬러로 여러가지 메이크업을 도전하실 수 있어요.</p>
-                    <div class="btm">
-                        <span class="pice">13,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">10,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -262,22 +281,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_3.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>가을칠리 립스틱</h3>
                     <p>가을웜톤분들에게 어울리는 가을칠리 립스틱! 가을분위기에 어울리는 도도한 색상을 발라보세요.</p>
-                    <div class="btm">
-                        <span class="pice">9,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">9,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -285,22 +298,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_4.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>대추밤 아이팔레트</h3>
                     <p>대추와 밤 색상을 그대로 담은 아이팔레트입니다. 차분한 컬러들이 담겨있어요.</p>
-                    <div class="btm">
-                        <span class="pice">13,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">12,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -308,22 +315,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_5.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>프링글스 립스틱</h3>
                     <p>프링글스통 색상을 담은 립스틱입니다. 강렬하고 쨍한 프링글스통 색상을 입술에 발라보세요.</p>
-                    <div class="btm">
-                        <span class="pice">11,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">11,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -331,22 +332,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_6.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>비건 녹차 비누</h3>
                     <p>비건인증된 녹차비누입니다. 화학성분이 들어가있지 않아 아기들도 안심하고 사용할 수 있습니다.</p>
-                    <div class="btm">
-                        <span class="pice">6,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">6,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -354,22 +349,16 @@
             <div class="box">
                 <div class="image">
                     <img src="images/menu_7.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>모카라떼 블러셔</h3>
                     <p>모카라떼가 그대로 풍덩 빠진 블러셔입니다. 차분한 색상이라 누구나 어울리는 블러셔입니다.</p>
-                    <div class="btm">
-                        <span class="pice">9,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">9,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -377,47 +366,20 @@
             <div class="box">
                 <div class="image">
                     <img src="images/dis_7.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
                     <h3>피치피치 하이라이터</h3>
                     <p>피치피치한 컬러와 반짝거리는 하이라이터로 얼굴 특정부위에 강조할 수 있습니다.</p>
-                    <div class="btm">
-                        <span class="pice">14,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                        
+                    <div class="price_box">
+                        <span class="price">14,000원</span>
+                        <div class="icons">
+                            <i class="fa-solid fa-heart"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="box">
-                <div class="image">
-                    <img src="images/dis_5.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>사막모래 컨실러</h3>
-                    <p>사막모래의 고운 입자의 컨실러입니다. 작은 입자들이여서 트러블 또는 흉터를 잘 가려줍니다.</p>
-                    <div class="btm">
-                        <span class="pice">11,000원</span>
-                        <a href="#" class="btn">카트 담기 <i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- menu section ends -->
@@ -518,17 +480,40 @@
         </div>
 
     </section>
-    <!-- review section ends -->
+
+    <section class="event">
+
+<h3 class="sub-heading"> 고객님들을 위한 </h3>
+        <h1 class="heading"> 이벤트 </h1>
+
+        <div class="box">
+            <div class="event_con">
+            <img src="images/event_1.jpg" alt="">
+            <h4>분홍분홍 에디션 출시</h4>
+            <p>귀여운 분홍색 뷰티 화장품들을 만나보세요.</p>
+            </div>
+<div class="event_con">
+            <img src="images/event_2.jpg" alt="">
+            <h4>가을가을 에디션 출시</h4>
+            <p>차분한 가을 신상을 만나보세요.</p>
+            </div>        </div>
+    </section>
+
+
+    <div class="map">
+
+        <h3>매장 찾기</h3>
+        <p>지금 찾고 있는 상품을 가까운 매장에서 확인해보세요. <br>빠르게 구매, 재고확인까지!</p>
+        <div class="box">
+            <input type="text" placeholder="매장 찾기">
+            <a href="#" class="btn">검색</a>
+        </div>
+    </div>
 
     <!-- footer section starts  -->
-
     <section class="footer">
 
         <div class="box-container">
-
-            <div class="box_logo">
-                <img src="images/logo.png" alt="">
-            </div>
 
             <div class="box">
                 <h3>아름다움을 모아</h3>
@@ -572,9 +557,6 @@
     <div class="loader-container">
         <img src="images/loader.gif" alt="">
     </div>
-
-
-
 
     <!-- 순서 중요!! 데모 할거면 데모스크립트를 위에 해야됨!! 순서 바꾸면 안됨 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

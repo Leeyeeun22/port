@@ -27,6 +27,7 @@ $box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     outline: none;
     transition: all .2s linear;
     font-family: $pre-font;
+    list-style: none;
 }
 
 html {
@@ -40,7 +41,6 @@ html {
 
     @include tablet {
         font-size: 57%;
-        ;
     }
 
     @include mobile {
@@ -54,19 +54,18 @@ body {
 
 section {
     margin: 0 auto;
-    padding: 4rem 6rem;
+    padding: 4rem 5rem;
     max-width: 1200px;
 
     @include mobile {
-        padding: 1rem;
-
+        padding: 2rem 3rem;
     }
 }
 
 .sub-heading {
     text-align: center;
     color: $main-color;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     padding-top: 4rem;
     padding-bottom: 1rem;
 }
@@ -74,7 +73,7 @@ section {
 .heading {
     text-align: center;
     color: $black;
-    font-size: 3rem;
+    font-size: 2.6rem;
     padding-bottom: 4rem;
     text-transform: uppercase;
 }
@@ -83,145 +82,238 @@ section {
 .btn {
     margin-top: 1rem;
     display: inline-block;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: #fff;
     background: $black;
     border-radius: .5rem;
     cursor: pointer;
-    padding: .8rem 3rem;
+    padding: .9rem 3rem;
+    text-align: center;
 
     &:hover {
         background: $main-color;
-        letter-spacing: .1rem;
-        /* 애니메이션처럼 커짐 */
     }
 }
 
 .btn_2 {
     margin-top: 1rem;
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: $black;
     background: $white;
     border-radius: .5rem;
     cursor: pointer;
-    padding: .8rem 3rem;
+    padding: .9rem 3rem;
 
     &:hover {
         background: $black;
         color: $white;
-        letter-spacing: .1rem;
+        // letter-spacing: .1rem;
         /* 애니메이션처럼 커짐 */
     }
 }
 
-
 /* header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+.header {
     background: $white;
-    z-index: 1000;
 
     &.active {
         box-shadow: $box-shadow;
     }
 
-    .flex {
+    @include mobile {
+        padding: 1rem 3rem;
+    }
+
+    /* top_menu */
+    .top_menu {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 6rem;
+        justify-content: flex-end;
+        background-color: $white;
+        padding: 1rem 5rem;
 
         @include mobile {
-            padding: 1rem 2rem;
+            display: none;
         }
 
-        .logo {
-            img {
-                width: 4.5rem;
-                height: 4.5rem;
-                border-radius: 50%;
-                line-height: 4.5rem;
-
-                @include mobile {
-                    width: 4rem;
-                    height: 4rem;
-                }
-            }
-        }
-
-        .navbar {
+        ul {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            /* 이거 해야 li 요소들 가로정렬됨! 왜냐! li는 기본적으로 수직으로 정렬되기때문에 가로정렬을 해주려면 flex 해줘야됨*/
 
-            @include mobile {
-                display: block;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: 0;
-                background: $white;
-                padding: 1rem;
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-
-                &.active {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                }
-            }
-
-            a {
-                font-size: 1.7rem;
-                border-radius: .5rem;
-                padding: .5rem 1.5rem;
-                color: $black;
-
-                &.active,
-                &:hover {
-                    color: $white;
-                    background: $main-color;
+            li {
+                &::after {
+                    content: "|";
+                    align-items: center;
+                    color: #ccc;
                 }
 
-                @include mobile {
-                    display: block;
-                    font-size: 2rem;
-                    margin: 2rem;
+                &:last-child::after {
+                    content: "";
+                }
+
+                &:nth-last-child(1) {
+
+                    a {
+                        padding-right: 0;
+                    }
+                }
+
+                a {
+                    padding: 0 1.5rem;
+                    color: $black;
+                    font-size: 1.2rem;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
+    }
 
-        .icons {
+    .mobile_top {
+        display: none;
+        padding: 1rem 0;
 
-            i,
-            a {
-                cursor: pointer;
-                margin-left: .3rem;
-                height: 4.5rem;
-                width: 4.5rem;
-                line-height: 4.5rem;
-                text-align: center;
-                font-size: 1.8rem;
+        @include mobile {
+            display: block;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .mo_logo {
+                img {
+                    width: 3.4rem;
+                    border-radius: 50%;
+                }
+            }
+
+            i {
+                color: #818181;
+                font-size: 2.5rem;
+                margin-left: 2rem;
+            }
+        }
+
+    }
+
+    /* middle menu */
+    .middle_menu {
+        background-color: $white;
+        border-bottom: 1px solid #c7c7c7;
+        padding: 0 5rem;
+
+        @include mobile {
+            display: none;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+
+            .logo {
+                font-size: 2.3rem;
+                font-weight: bold;
                 color: $black;
-                border-radius: 50%;
-                background-color: #eee;
+            }
+
+            .search_box form {
+                display: flex;
+                border: .2rem solid $black;
+                border-radius: 3rem;
+                overflow: hidden;
+
+                input[type="text"] {
+                    padding: 1.3rem 4rem;
+                    border: none;
+                    outline: none;
+                    width: 34rem;
+                }
+
+                .search_btn {
+                    background-color: $white;
+                    border: none;
+                    padding: 1rem 2rem;
+                    cursor: pointer;
+                    color: $light-black;
+                    font-weight: bold;
+
+                    i {
+                        font-size: 1.7rem;
+
+                        &:hover {
+                            color: $black;
+                        }
+                    }
+                }
+            }
+
+            .menu_list a {
+                margin-left: 2rem;
+                font-size: 1.5rem;
+                text-decoration: none;
+                color: $black;
+                font-weight: bold;
 
                 &:hover {
-                    background: $main-color;
-                    color: $white;
-                    transform: rotate(360deg);
+                    color: $main-color;
                 }
             }
+        }
+    }
 
-            #menu-bars {
-                display: none;
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        padding: 2rem 0;
 
-                @include mobile {
-                    display: inline-block;
-                }
+        @include mobile {
+            display: none;
+        }
+
+        a {
+            font-size: 1.6rem;
+            color: $black;
+            font-weight: bolder;
+
+            &:hover {
+                color: $main-color;
             }
+        }
+    }
+}
+
+.mobile_nav {
+    width: 100%;
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+
+    .navbar {
+        background: $white;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+
+        a {
+            font-size: 1.4rem;
+            color: $black;
         }
     }
 }
@@ -284,7 +376,6 @@ header {
 
 .home {
     width: 100%;
-    padding-top: 7rem;
 
     .home-slider {
         max-width: 100%;
@@ -296,7 +387,7 @@ header {
             align-items: center;
             justify-content: center;
             position: relative;
-            max-height: 90vh;
+            max-height: 80vh;
 
             @include mobile {
                 max-height: 120vh;
@@ -307,7 +398,7 @@ header {
                 top: 50%;
                 left: 10%;
                 transform: translateY(-50%);
-                padding:1rem;
+                padding: 1rem;
 
                 &.second {
 
@@ -319,7 +410,9 @@ header {
                 }
 
                 span {
-                    font-size: 1.9rem;
+                    font-size: 1.8rem;
+                    display: inline-block;
+                    margin-bottom: 1rem;
 
                     @include mobile {
                         font-size: 1.3rem;
@@ -327,7 +420,8 @@ header {
                 }
 
                 h3 {
-                    font-size: 6rem;
+                    font-size: 4.2rem;
+                    margin-bottom: 1rem;
 
                     @include mobile {
                         font-size: 2.5rem;
@@ -335,7 +429,7 @@ header {
                 }
 
                 p {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                     line-height: 2;
 
                     @include mobile {
@@ -351,7 +445,7 @@ header {
                 align-items: center;
                 justify-content: center;
 
-                @include mobile{
+                @include mobile {
                     height: 35vh;
                 }
 
@@ -367,9 +461,33 @@ header {
 
 /* dishes */
 .dishes {
+    margin-top: 6rem;
+
+    .menu_title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+
+        .title_top {
+            font-size: 2.5rem;
+            color: $black;
+            font-weight: bold;
+        }
+
+        .more {
+            color: $light-black;
+            font-size: 1.8rem;
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+
     .box-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         gap: 1.5rem;
 
         @include mobile {
@@ -378,107 +496,89 @@ header {
         }
 
         .box {
-            padding: 2rem;
+            padding: 1rem;
             background: $white;
-            border-radius: .5rem;
-            border: .1rem solid rgba(0, 0, 0, .2);
-            box-shadow: $box-shadow;
             position: relative;
             overflow: hidden;
-            text-align: center;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+            width: 100%;
 
-            img {
-                height: 18rem;
-                margin: 1rem 0;
+            .image {
+                width: 100%;
 
-                @include mobile {
-                    height: 10rem;
+                img {
+                    height: 17rem;
+                    width: 100%;
+                    object-fit: cover;
+
+                    @include mobile {
+                        height: 10rem;
+                    }
                 }
             }
 
             h3 {
                 color: $black;
-                font-size: 1.7rem;
-                margin-top: 1.5rem;
+                font-size: 1.6rem;
+                text-align: left;
+                font-weight: normal;
 
                 @include mobile {
-                    font-size: 1.5rem;
+                    font-size: 1.4rem;
                     margin-top: .5rem;
-
                 }
             }
 
             .price {
-                margin: 1.2rem 0;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
-                gap: .8rem;
 
-                .sale {
-                    color: $main-color;
-                    font-size: 1.8rem;
-                    font-weight: bolder;
+                .pr_box {
+                    display: flex;
+                    align-items: center;
+                    gap: .8rem;
 
-                    @include mobile {
-                        font-size: 1.4rem;
+                    .sale {
+                        color: $main-color;
+                        font-size: 1.7rem;
+                        font-weight: bolder;
+
+                        @include mobile {
+                            font-size: 1.4rem;
+                        }
+
                     }
 
-                }
+                    .under {
+                        text-decoration: line-through;
+                        color: $light-black;
+                        font-size: 1.5rem;
 
-                .under {
-                    text-decoration: line-through;
-                    color: $light-black;
-                    font-size: 1.6rem;
+                        @include mobile {
+                            font-size: 1.2rem;
+                        }
+                    }
 
-                    @include mobile {
-                        font-size: 1.2rem;
+                    .main_price {
+                        color: $black;
+                        font-size: 1.7rem;
+                        font-weight: bolder;
+
+                        @include mobile {
+                            font-size: 1.3rem;
+                        }
                     }
                 }
 
-                .main_price {
-                    color: $black;
-                    font-size: 2rem;
-                    font-weight: bolder;
+                .fa-heart {
 
-                    @include mobile {
-                        font-size: 1.3rem;
-                    }
+                    color: red;
+                    font-size: 1.5rem;
                 }
-            }
-
-            .fa-heart,
-            .fa-bookmark {
-                position: absolute;
-                top: 1.5rem;
-                background: #eee;
-                border-radius: 50%;
-                height: 5rem;
-                width: 5rem;
-                line-height: 5rem;
-                font-size: 2rem;
-                color: $black;
-
-                @include mobile {
-                    height: 4rem;
-                    width: 4rem;
-                    font-size: 1.6rem;
-                    line-height: 4rem;
-                }
-
-                &:hover {
-                    background: $main-color;
-                    color: $white;
-                }
-            }
-
-            .fa-heart {
-                right: 1.5rem;
-            }
-
-            .fa-bookmark {
-                left: 1.5rem;
             }
         }
     }
@@ -488,7 +588,7 @@ header {
     background: url('../images/beauty-4993469_1280.jpg') center/cover no-repeat fixed;
     background-color: rgba(0, 0, 0, 0.356);
     background-blend-mode: color;
-    min-height: 50vh;
+    min-height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,7 +598,7 @@ header {
         width: 100%;
         min-height: 45vh;
         margin-top: 5rem;
-
+        padding:3rem;
     }
 
     .content {
@@ -506,13 +606,14 @@ header {
 
         h2 {
             color: $white;
-            font-size: 2.7rem;
+            font-size: 2.6rem;
         }
 
         p {
             color: $white;
             font-size: 1.7rem;
             margin: 2rem 0;
+            line-height: 2;
         }
     }
 }
@@ -520,68 +621,44 @@ header {
 .menu {
     .box-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 3rem;
+        padding: 1rem;
 
         @include mobile {
             grid-template-columns: repeat(2, 1fr);
         }
 
         .box {
-            background: #fff;
-            border: .1rem solid rgba(0, 0, 0, .2);
-            border-radius: .5rem;
-            box-shadow: $box-shadow;
+            background: $white;
+            position: relative;
+            overflow: hidden;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+            width: 100%;
+            margin-top: 1.5rem;
 
             .image {
-                height: 25rem;
                 width: 100%;
-                padding: 1.5rem;
-                overflow: hidden;
-                position: relative;
-
-                @include mobile {
-                    height: 18rem;
-                }
 
                 img {
-                    height: 100%;
+                    height: 18rem;
                     width: 100%;
-                    border-radius: .5rem;
                     object-fit: cover;
-                }
-
-                .fa-heart {
-                    position: absolute;
-                    top: 2.5rem;
-                    right: 2.5rem;
-                    height: 5rem;
-                    width: 5rem;
-                    line-height: 5rem;
-                    text-align: center;
-                    font-size: 2rem;
-                    background: #fff;
-                    border-radius: 50%;
-                    color: $black;
 
                     @include mobile {
-                        height: 4rem;
-                        width: 4rem;
-                        line-height: 4rem;
-                        font-size: 1.8rem;
-                    }
-
-                    &:hover {
-                        background: $main-color;
-                        color: #fff;
+                        height: 10rem;
                     }
                 }
             }
 
             .content {
-                padding: 2rem;
-                padding-top: 0;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
 
                 h3 {
                     color: $black;
@@ -603,34 +680,33 @@ header {
                     }
                 }
 
-                .stars {
-                    padding-bottom: 1rem;
-
-                    i {
-                        font-size: 1.7rem;
-                        color: $main-color;
-
-                        @include mobile {
-                            font-size: 1.4rem;
-                        }
-                    }
-                }
-
-                .btm {
+                .price_box {
+                    margin-top: auto;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    gap: 1rem;
-                    flex-wrap: wrap;
 
-                    .pice {
-                        color: $main-color;
-                        font-size: 1.8rem;
-                        font-weight: bolder;
+                    .price {
+                        color: $black;
+                        font-size: 1.7rem;
+                        font-weight: bold;
+                    }
 
-                        @include mobile {
-                            font-size: 1.5rem;
-                            text-align: center;
+                    .icons {
+                        font-size: 1.5rem;
+
+                        .fa-heart {
+                            color: red;
+                        }
+
+                        .fa-shopping-cart {
+                            color: #a0a0a0;
+                            margin-left: 1rem;
+
+                            &:hover {
+                                color: $black;
+                            }
+
                         }
                     }
                 }
@@ -650,7 +726,7 @@ header {
             border: .1rem solid rgba(0, 0, 0, .2);
             border-radius: .5rem;
             position: relative;
-            min-height: 28rem;
+            min-height: 26rem;
             flex-direction: column;
 
             @include mobile {
@@ -659,7 +735,7 @@ header {
             }
 
             p {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 line-height: 1.8;
                 color: $light-color;
                 margin-top: auto;
@@ -689,7 +765,7 @@ header {
 
                 h3 {
                     color: $black;
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                     padding-bottom: .5rem;
 
                     @include mobile {
@@ -710,9 +786,101 @@ header {
     }
 }
 
+.event {
+
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 1rem;
+
+        .event_con {
+            flex: 1 1 40rem;
+
+            img {
+                width: 100%;
+                height: 30rem;
+                border-radius: 1rem;
+            }
+
+            h4 {
+                font-size: 2rem;
+                color: $black;
+                margin-top: 1.5rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+
+                color: $light-color;
+            }
+        }
+    }
+}
+
+.map {
+    background: url('../images/marp.jpg') no-repeat center/cover;
+    background-color: rgba(0, 0, 0, 0.623);
+    background-blend-mode: color;
+    margin-top: 5rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include mobile{
+        min-height: 50vh;
+    }
+
+    h3 {
+        color: $white;
+        font-size: 3rem;
+
+        @include mobile{
+            font-size: 2.5rem;
+        }
+    }
+
+    p {
+        color: $white;
+        font-size: 1.6rem;
+        text-align: center;
+        line-height: 2;
+    }
+
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        input[type="text"] {
+            background: $white;
+            padding: 1.5rem 3rem;
+            min-width: 40rem;
+            border-radius: 3rem;
+            font-size: 1.5rem;
+
+            @include mobile{
+                min-width: 25rem;
+            }
+        }
+
+        .btn {
+            margin-top: 0;
+            padding: 1.2rem 3rem;
+        }
+    }
+}
+
 .footer {
     border-top: .1rem solid rgba(11, 11, 11, 0.1);
-    margin-top: 5rem;
 
     .box-container {
         display: grid;
@@ -745,7 +913,7 @@ header {
 
             h3 {
                 padding: .8rem 0;
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 color: $black;
 
                 @include mobile {
@@ -756,7 +924,7 @@ header {
             a {
                 display: block;
                 padding: .8rem 0;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 color: $light-color;
 
                 @include mobile {
@@ -816,5 +984,4 @@ header {
     @include mobile {
         display: none;
     }
-
 }

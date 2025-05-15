@@ -22,7 +22,7 @@ html {
     font-size: 55%;
   }
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   html {
     font-size: 50%;
   }
@@ -33,7 +33,7 @@ section {
   max-width: 1200px;
   padding: 3rem 4rem;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   section {
     padding: 2rem;
   }
@@ -53,7 +53,7 @@ section {
 .header.active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header {
     padding: 1rem 2rem;
   }
@@ -88,7 +88,7 @@ section {
 .header .top_menu ul li a:hover {
   color: #00c5a7;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .top_menu ul li a {
     font-size: 1.5rem;
   }
@@ -102,7 +102,7 @@ section {
 .header .flex .logo img {
   width: 100%;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .logo img {
     height: 3rem;
   }
@@ -116,7 +116,7 @@ section {
 .header .flex .navbar a:hover {
   color: #00c5a7;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar a {
     display: block;
     padding: 1.5rem;
@@ -125,7 +125,7 @@ section {
     background: #eee;
   }
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar {
     position: absolute;
     top: 100%;
@@ -162,7 +162,7 @@ section {
   transform: rotate(360deg);
   transition: 0.2s linear;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .icons i,
   .header .flex .icons a {
     font-size: 2.5rem;
@@ -174,7 +174,7 @@ section {
 .header .flex .icons #menu-bars {
   display: none;
 }
-@media (min-width: 450px) and (max-width: 767px) {
+@media (min-width: 350px) and (max-width: 767px) {
   .header .flex .icons #menu-bars {
     display: inline-block;
   }
