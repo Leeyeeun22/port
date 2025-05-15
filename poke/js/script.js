@@ -32,3 +32,11 @@ function prev(){
     index = (index - 1 + slides.length) % slides.length;
     slides[index].classList.add('active');
 }
+
+document.querySelector('#search-icons').onclick = () => {
+  document.querySelector('#search-form').classList.toggle('active');
+}
+
+document.querySelector('#close').onclick = () => {
+  document.querySelector('#search-form').classList.remove('active');
+}

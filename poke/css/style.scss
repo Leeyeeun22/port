@@ -1,4 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
 @import "../../css/mixin";
 
 @font-face {
@@ -22,17 +23,19 @@
     font-style: normal;
 }
 
+/* 폰트 변수 */
 $pre-font: 'Pretendard-Regular', serif;
 $cafe-font: 'Cafe24Ssurround', serif;
 $Ink-font: 'InkLipquid', serif;
 
+/* 변수 */
 $main-color: #fcc42c;
 $sub-color: #272727;
 $light-color: #adadad;
-$banner-color: #076ec1;
+$banner-color: #0773ca;
 $black: #151515;
 $white: #fff;
-$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 
 * {
     margin: 0;
@@ -48,6 +51,7 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background: $white;
 
     @include desktop {
         font-size: 60%;
@@ -55,25 +59,25 @@ html {
 
     @include tablet {
         font-size: 57%;
-        ;
     }
 
     @include mobile {
-        font-size: 52%;
+        font-size: 53%;
     }
-}
-
-body {
-    background: $white;
 }
 
 section {
     margin: 0 auto;
     padding: 4rem 3rem;
     max-width: 1200px;
+
+    @include mobile {
+        padding: 2rem 4rem;
+    }
 }
 
-.btn_2 {
+/* 버튼 */
+.btn {
     display: inline-block;
     color: $white;
     font-size: 1.5rem;
@@ -89,7 +93,7 @@ section {
     }
 
     &:hover {
-        background: $main-color;
+        background: $banner-color;
 
         i {
             margin-left: 1rem;
@@ -98,14 +102,20 @@ section {
     }
 }
 
+/* title */
 .title {
     text-align: center;
     padding: 5rem 0;
     font-family: $cafe-font;
 
+    @include mobile {
+        padding: 2rem 0;
+
+    }
+
     h2 {
         color: $black;
-        font-size: 3.6rem;
+        font-size: 3rem;
 
         span {
             color: $main-color;
@@ -133,6 +143,25 @@ section {
     &.active {
         box-shadow: $box-shadow;
         background: $white;
+
+        .flex {
+
+            .logo {
+                font-size: 2.3rem;
+                color: $black;
+            }
+
+            .icons {
+                i {
+                    color: $black;
+
+                }
+
+                #menuBtn {
+                    color: $black;
+                }
+            }
+        }
     }
 
     .flex {
@@ -140,11 +169,15 @@ section {
         align-items: center;
         justify-content: space-between;
         padding: 2rem 3rem;
+        font-family: $cafe-font;
 
         .logo {
-            font-size: 2.4rem;
+            font-size: 2.3rem;
             color: $white;
-            font-family: $cafe-font;
+
+            &:hover {
+                color: $banner-color;
+            }
         }
 
         .navbar {
@@ -153,78 +186,43 @@ section {
             gap: 1rem;
 
             @include mobile {
-                display: block;
+                display: flex;
+                flex-direction: column;
                 position: absolute;
                 top: 100%;
-                right: 0;
-                left: 0;
+                right: -100%;
+                min-height: 40vh;
+                width: 100%;
                 background: $white;
-                padding: 1rem;
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                box-shadow: $box-shadow;
+                padding: 1rem 0;
 
                 &.active {
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    right: 0;
                 }
             }
 
             li {
                 text-align: center;
 
-                @include mobile {
-                    border-bottom: .2rem solid #f1f1f1;
-                }
-
                 a {
-                    font-family: $cafe-font;
-                    font-size: 1.7rem;
+                    font-size: 1.5rem;
                     color: $black;
-                    padding: 1rem 0;
+                    padding: .8rem 0;
                     position: relative;
-                    display: block;
-                    width: 9rem;
+                    display: inline-block;
+                    width: 8rem;
                     text-align: center;
 
-                    &.last-li {
-                        display: none;
-
-                        @include mobile {
-                            display: block;
-                        }
+                    &:hover {
+                        color: $banner-color;
                     }
 
                     @include mobile {
                         display: block;
                         font-size: 2rem;
-                        margin: 2rem;
+                        margin: 1rem;
                         width: 100%;
-
-                        &:hover {
-                            color: $main-color;
-                        }
-                    }
-
-                    &::after {
-                        position: absolute;
-                        top: 100%;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background: $main-color;
-                        content: '';
-                        -webkit-transition: -webkit-transform 0.3s;
-                        -moz-transition: -moz-transform 0.3s;
-                        transition: transform 0.3s;
-                        -webkit-transform: scale(0.85);
-                        -moz-transform: scale(0.85);
-                        transform: scale(0.85);
-                        opacity: 0;
-                        -webkit-transition: top 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-                        -moz-transition: top 0.3s, opacity 0.3s, -moz-transform 0.3s;
-                        transition: top 0.3s, opacity 0.3s, transform 0.3s;
-
-                        @include mobile {
-                            display: none;
-                        }
                     }
 
                     &::before {
@@ -233,17 +231,11 @@ section {
                         left: 0;
                         width: 100%;
                         height: 2px;
-                        background: $main-color;
+                        background: $banner-color;
                         content: '';
-                        -webkit-transition: -webkit-transform 0.3s;
-                        -moz-transition: -moz-transform 0.3s;
                         transition: transform 0.3s;
-                        -webkit-transform: scale(0.85);
-                        -moz-transform: scale(0.85);
                         transform: scale(0.85);
                         opacity: 0;
-                        -webkit-transition: bottom 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-                        -moz-transition: bottom 0.3s, opacity 0.3s, -moz-transform 0.3s;
                         transition: bottom 0.3s, opacity 0.3s, transform 0.3s;
 
                         @include mobile {
@@ -252,75 +244,125 @@ section {
                     }
 
                     &:hover:before,
-                    &:hover:after,
-                    &:focus:before,
-                    &:focus:after {
-                        -webkit-transform: scale(1);
-                        -moz-transform: scale(1);
-                        transform: scale(1);
-                        background: $main-color;
-                    }
-
-                    &:hover:after,
-                    &:focus:after {
-                        top: 0%;
-                        opacity: 1;
-                    }
-
-                    &:hover:before,
                     &:focus:before {
+                        transform: scale(1);
+                        background: $banner-color;
                         bottom: 0%;
                         opacity: 1;
                     }
                 }
             }
+        }
 
-            .btn {
-                display: inline;
-                color: $white;
-                font-size: 1.7rem;
-                border-radius: 2rem;
-                background-color: $sub-color;
-                padding: 1rem 1.5rem;
-                font-family: $cafe-font;
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 2.7rem;
+
+            i {
+                font-size: 1.8rem;
+                color: $black;
+                cursor: pointer;
 
                 &:hover {
-                    background: $main-color;
+                    color: $banner-color;
+                    font-weight: bold;
                 }
 
                 @include mobile {
-                    display: none;
+                    font-size: 2.5rem;
+                    color: $white;
                 }
             }
 
-        }
+            #menuBtn {
+                font-size: 2.5rem;
+                cursor: pointer;
+                color: $black;
+                display: none;
 
-        #menuBtn {
-            font-size: 2rem;
-            color: $black;
-            cursor: pointer;
-            display: none;
+                @include mobile {
+                    display: inline-block;
+                    color: $white;
 
-            @include mobile {
-                display: inline-block;
-                font-size: 3rem;
-
-                &.fa-xmark {
-                    transform: rotate(90deg);
+                    &.fa-xmark {
+                        transform: rotate(90deg);
+                    }
                 }
             }
         }
     }
 }
 
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    /* top -110% 해서 안보이게 함 */
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+
+    @include mobile {
+        padding: 0 5rem;
+    }
+
+    &.active {
+        top: 0;
+    }
+
+    #search-box {
+        width: 50rem;
+        border-bottom: .1rem solid #fff;
+        padding: 1rem 0;
+        color: #fff;
+        font-size: 2.2rem;
+        text-transform: none;
+        background: none;
+
+        &::placeholder {
+            color: #eee;
+        }
+
+        &::-webkit-scrollbar-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    label {
+        color: #fff;
+        cursor: pointer;
+        font-size: 2.2rem;
+
+        &:hover {
+            color: $main-color;
+        }
+    }
+
+    #close {
+        position: absolute;
+        color: #fff;
+        cursor: pointer;
+        top: 2rem;
+        right: 3rem;
+        font-size: 3.5rem;
+    }
+}
+
+/* home */
 .home {
     position: relative;
     min-height: 100vh;
     align-content: center;
+    padding-top: 3rem;
 
     @include mobile {
         min-height: 80vh;
-        padding-top: 6rem;
     }
 
     &::before {
@@ -354,7 +396,7 @@ section {
             text-align: center;
 
             img {
-                height: 40rem;
+                height: 42rem;
                 object-fit: contain;
 
                 @include mobile {
@@ -391,8 +433,8 @@ section {
 .best {
     text-align: center;
 
-    .btn_2 {
-        margin-top: 6rem;
+    .btn {
+        margin-top: 4rem;
     }
 
     .menu_container {
@@ -400,97 +442,101 @@ section {
         grid-template-columns: repeat(auto-fit, 25rem);
         align-items: center;
         justify-content: center;
+        gap: 1.5rem;
 
         @include mobile {
             grid-template-columns: repeat(2, 1fr);
-            gap:3rem;
+            gap: 2rem;
         }
-
 
         .box {
             position: relative;
             overflow: hidden;
             text-align: center;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: $box-shadow;
 
-            img {
-                height: 15rem;
-                object-fit: cover;
-                z-index: -1;
+            .image {
+                width: 100%;
+                position: relative;
+                background: url('../images/new_bg.jpg') no-repeat center/cover;
+                padding: 1rem;
+
+                img {
+                    width: 100%;
+                    height: 20rem;
+                    object-fit: contain;
+                    z-index: -1;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
+                    @include mobile {
+                        height: 13rem;
+                    }
+                }
+
+                .fa-heart {
+                    position: absolute;
+                    bottom: .5rem;
+                    right: 1rem;
+                    color: #ccc;
+                    height: 3rem;
+                    width: 3rem;
+                    font-size: 1.5rem;
+                    line-height: 3rem;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background: $white;
+                    z-index: 1;
+
+                    &:hover {
+                        color: rgb(248, 152, 168);
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    top: .5rem;
+                    left: 1rem;
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    border-radius: 2rem;
+                    background: rgb(253, 20, 20);
+                    color: $white;
+                    padding: .5rem .8rem;
+                    line-height: 1.3;
+                }
             }
 
             h3 {
-                font-size: 1.7rem;
-                color: $black;
-                text-align: center;
-                margin-top: 1rem;
-            }
-
-            .fa-heart,
-            .fa-thumbs-up {
-                position: absolute;
-                top: 1.5rem;
-                color: $white;
-                height: 4rem;
-                width: 4rem;
                 font-size: 1.6rem;
-                line-height: 4rem;
-                border-radius: 50%;
-                cursor: pointer;
-                background: $sub-color;
-                z-index: 1;
-            }
-
-            .fa-heart {
-                right: -15rem;
-
-                &:hover {
-                    background-color: $main-color;
-                }
-            }
-
-            &:hover .fa-heart {
-                right: 1.5rem;
-
-            }
-
-            .fa-thumbs-up {
-                left: -15rem;
-
-                &:hover {
-                    background-color: $main-color;
-                }
-            }
-
-            &:hover .fa-thumbs-up {
-                left: 1.5rem;
+                color: $black;
+                text-align: left;
             }
 
             .price {
-
-                .under {
-                    color: $light-color;
-                    text-decoration: line-through;
-                    font-size: 1.4rem;
-                }
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
 
                 .sale {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 1rem;
+                    color: red;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                }
 
-                    >span {
-                        color: red;
-                        font-size: 1.6rem;
-                        font-weight: bold;
-                    }
-
-                    .sale_pr {
-                        color: $black;
-                        font-size: 1.6rem;
-                        font-weight: bold;
-                    }
+                .sale_pr {
+                    color: $black;
+                    font-size: 1.6rem;
+                    font-weight: bold;
                 }
             }
         }
@@ -499,14 +545,18 @@ section {
 
 .about {
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 7rem;
 
     .about_banner {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 5rem;
+
+        @include mobile{
+            gap:3rem;
+        }
 
         .image {
             flex: 1 1 40rem;
@@ -517,21 +567,21 @@ section {
                 object-fit: cover;
 
                 @include mobile {
-                    height: 50rem;
+                    height: 40rem;
                 }
             }
         }
 
         .content {
             flex: 1 1 40rem;
-            padding: 3rem 6rem;
+            padding: 2rem;
 
-            .btn_2 {
+            .btn {
                 margin-top: 3rem;
             }
 
             h2 {
-                font-size: 7rem;
+                font-size: 5rem;
                 color: $banner-color;
                 font-family: $cafe-font;
 
@@ -540,8 +590,8 @@ section {
                 }
             }
 
-            >span {
-                font-size: 3.3rem;
+            .top_txt {
+                font-size: 2.6rem;
                 color: $sub-color;
                 font-family: $Ink-font;
                 margin-bottom: 3rem;
@@ -553,21 +603,146 @@ section {
 
             p {
                 color: $black;
-                font-size: 1.6rem;
-                line-height: 2;
+                font-size: 1.5rem;
+                line-height: 2.4;
                 margin-top: 3rem;
 
                 span {
                     color: $main-color;
                     font-weight: bolder;
-                    font-size: 3rem;
-                    font-family: $Ink-font;
-
+                    font-size: 1.5rem;
+                    display: inline;
                 }
             }
         }
     }
 }
+
+.new {
+    text-align: center;
+
+    .btn {
+        margin-top: 4rem;
+    }
+
+    .menu_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 25rem);
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .box {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: $box-shadow;
+
+            .image {
+                width: 100%;
+                position: relative;
+                background: url('../images/wood2.jpg') no-repeat center/cover;
+                padding: 1rem;
+
+                img {
+                    width: 100%;
+                    height: 20rem;
+                    object-fit: contain;
+                    z-index: -1;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
+                    @include mobile {
+                        height: 13rem;
+                    }
+                }
+
+                .fa-heart {
+                    position: absolute;
+                    bottom: .5rem;
+                    right: 1rem;
+                    color: #ccc;
+                    height: 3rem;
+                    width: 3rem;
+                    font-size: 1.5rem;
+                    line-height: 3rem;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background: $white;
+                    z-index: 1;
+
+                    &:hover {
+                        color: rgb(248, 152, 168);
+                    }
+                }
+
+                span {
+                    position: absolute;
+                    top: .5rem;
+                    left: 1rem;
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    border-radius: 2rem;
+                    background: $main-color;
+                    color: $white;
+                    padding: .4rem .7rem;
+                    line-height: 1.3;
+                }
+            }
+
+            h3 {
+                font-size: 1.6rem;
+                color: $black;
+                text-align: left;
+            }
+
+            p{
+                text-align: left;
+                font-size: 1.3rem;
+                color:#6b6b6b;
+            }
+
+            .price {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
+
+                .sale {
+                    color: red;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                }
+
+                .sale_pr {
+                    color: $black;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                }
+
+                .sale_un{
+                    color:$light-color;
+                    font-size: 1.4rem;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+}
+
 
 .order {
 
@@ -577,45 +752,57 @@ section {
         box-shadow: $box-shadow;
         border: .1rem solid rgba(154, 154, 154, 0.2);
         background: $white;
-        padding: 1.5rem;
+        padding: 4rem 5rem;
         margin: 0 auto;
+        border-left: 5rem solid $main-color;
+
+        @include mobile{
+            padding:2rem;
+        border-left: 2rem solid $main-color;
+        }
 
         .inputBox {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            align-items: center;
 
             .input {
-                width: 49%;
+                width: 48%;
 
                 span {
                     display: block;
                     padding: 1rem 0;
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                     color: $black;
+                    font-family: $cafe-font;
+
+                    @include mobile{
+                        font-size: 1.4rem;
+                    }
                 }
 
                 input,
                 textarea {
-                    background: #eee;
+                    background: #f2f2f2;
                     border-radius: .5rem;
                     padding: 1rem;
-                    font-size: 1.6rem;
-                    color: $black;
+                    font-size: 1.4rem;
+                    color: $sub-color;
                     text-transform: none;
                     margin-bottom: 1rem;
                     width: 100%;
-
-                    &:focus {
-                        border: .4rem solid $main-color;
-                    }
+                    font-family: $pre-font;
                 }
 
                 textarea {
                     height: 20rem;
                     resize: none;
-                }
 
+                    @include mobile{
+                        height:10rem;
+                    }
+                }
             }
         }
     }
@@ -623,10 +810,8 @@ section {
     .btn_box {
         text-align: center;
 
-        .btn_2 {
-            margin-top: .6rem;
-            font-size: 2rem;
-
+        .btn {
+            margin-top: 1rem;
         }
     }
 }
@@ -636,7 +821,7 @@ section {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin-top: 7rem;
+    margin-top: 6rem;
     min-height: 70vh;
     display: flex;
     justify-content: center;
@@ -652,27 +837,31 @@ section {
 
         .content {
             flex: 1 1 40rem;
-            padding: 2rem 2.5rem;
+            padding: 3rem;
             background-color: $white;
             box-shadow: $box-shadow;
             border-radius: .5rem;
             user-select: none;
 
             h3 {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 color: $black;
                 margin-bottom: 1.5rem;
                 font-family: $cafe-font;
 
                 @include mobile {
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                 }
             }
 
             p {
                 line-height: 2;
-                font-size: 1.7rem;
+                font-size: 1.5rem;
                 color: $sub-color;
+
+                @include mobile{
+                    font-size: 1.3rem;
+                }
             }
         }
 
@@ -700,9 +889,13 @@ section {
 
                 p {
                     line-height: 1.8;
-                    font-size: 1.6rem;
+                    font-size: 1.5rem;
                     color: $sub-color;
                     animation: slide 0.4s 0.2s ease-out backwards;
+
+                    @include mobile{
+                    font-size: 1.3rem;
+                }
                 }
 
                 .user {
@@ -711,7 +904,7 @@ section {
                     gap: 1.5rem;
                     padding-top: 1.5rem;
                     margin-top: 1.5rem;
-                    border-top: 0.1rem solid $sub-color;
+                    border-top: 0.1rem solid $light-color;
                     animation: slide 0.4s 0.4s ease-out backwards;
 
                     img {
@@ -765,19 +958,9 @@ section {
 }
 
 .footer {
-    background: $sub-color;
-    color: $white;
-    text-align: center;
-    margin-top: 3rem;
-
-    p {
-        font-size: 1.5rem;
-    }
-}
-
-.footer {
+    margin-top: 5rem;
     background-color: $sub-color;
-
+    
     .flex {
         display: flex;
         align-items: center;
@@ -793,12 +976,12 @@ section {
 
         .logo {
             font-size: 2rem;
-            color: $white;
+            color: $main-color;
             font-family: $cafe-font;
             font-size: 2rem;
 
             &:hover {
-                color: $main-color;
+                color: $banner-color;
             }
         }
 
@@ -827,6 +1010,10 @@ section {
             color: $white;
             font-size: 1.5rem;
             font-family: $cafe-font;
+            border-radius: 2rem;
+            border:.2rem solid $white;
+            padding:1rem 2rem;
+            line-height: 1.5rem;
 
             &:hover {
                 color: $main-color;

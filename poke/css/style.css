@@ -18,6 +18,8 @@
   font-weight: normal;
   font-style: normal;
 }
+/* 폰트 변수 */
+/* 변수 */
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +34,7 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background: #fff;
 }
 @media (min-width: 1024px) {
   html {
@@ -45,12 +48,8 @@ html {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   html {
-    font-size: 52%;
+    font-size: 53%;
   }
-}
-
-body {
-  background: #fff;
 }
 
 section {
@@ -58,8 +57,14 @@ section {
   padding: 4rem 3rem;
   max-width: 1200px;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  section {
+    padding: 2rem 4rem;
+  }
+}
 
-.btn_2 {
+/* 버튼 */
+.btn {
   display: inline-block;
   color: #fff;
   font-size: 1.5rem;
@@ -70,24 +75,30 @@ section {
   cursor: pointer;
   font-family: "Cafe24Ssurround", serif;
 }
-.btn_2 i {
+.btn i {
   margin-left: 0.5rem;
 }
-.btn_2:hover {
-  background: #fcc42c;
+.btn:hover {
+  background: #0773ca;
 }
-.btn_2:hover i {
+.btn:hover i {
   margin-left: 1rem;
 }
 
+/* title */
 .title {
   text-align: center;
   padding: 5rem 0;
   font-family: "Cafe24Ssurround", serif;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .title {
+    padding: 2rem 0;
+  }
+}
 .title h2 {
   color: #151515;
-  font-size: 3.6rem;
+  font-size: 3rem;
 }
 .title h2 span {
   color: #fcc42c;
@@ -110,19 +121,32 @@ section {
   z-index: 1000;
 }
 .header.active {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   background: #fff;
+}
+.header.active .flex .logo {
+  font-size: 2.3rem;
+  color: #151515;
+}
+.header.active .flex .icons i {
+  color: #151515;
+}
+.header.active .flex .icons #menuBtn {
+  color: #151515;
 }
 .header .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 3rem;
+  font-family: "Cafe24Ssurround", serif;
 }
 .header .flex .logo {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   color: #fff;
-  font-family: "Cafe24Ssurround", serif;
+}
+.header .flex .logo:hover {
+  color: #0773ca;
 }
 .header .flex .navbar {
   display: flex;
@@ -131,74 +155,42 @@ section {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
-    left: 0;
+    right: -100%;
+    min-height: 40vh;
+    width: 100%;
     background: #fff;
-    padding: 1rem;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
   }
   .header .flex .navbar.active {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    right: 0;
   }
 }
 .header .flex .navbar li {
   text-align: center;
 }
-@media (min-width: 350px) and (max-width: 767px) {
-  .header .flex .navbar li {
-    border-bottom: 0.2rem solid #f1f1f1;
-  }
-}
 .header .flex .navbar li a {
-  font-family: "Cafe24Ssurround", serif;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #151515;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   position: relative;
-  display: block;
-  width: 9rem;
+  display: inline-block;
+  width: 8rem;
   text-align: center;
 }
-.header .flex .navbar li a.last-li {
-  display: none;
-}
-@media (min-width: 350px) and (max-width: 767px) {
-  .header .flex .navbar li a.last-li {
-    display: block;
-  }
+.header .flex .navbar li a:hover {
+  color: #0773ca;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .header .flex .navbar li a {
     display: block;
     font-size: 2rem;
-    margin: 2rem;
+    margin: 1rem;
     width: 100%;
-  }
-  .header .flex .navbar li a:hover {
-    color: #fcc42c;
-  }
-}
-.header .flex .navbar li a::after {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #fcc42c;
-  content: "";
-  transition: transform 0.3s;
-  transform: scale(0.85);
-  opacity: 0;
-  transition: top 0.3s, opacity 0.3s, transform 0.3s;
-}
-@media (min-width: 350px) and (max-width: 767px) {
-  .header .flex .navbar li a::after {
-    display: none;
   }
 }
 .header .flex .navbar li a::before {
@@ -207,7 +199,7 @@ section {
   left: 0;
   width: 100%;
   height: 2px;
-  background: #fcc42c;
+  background: #0773ca;
   content: "";
   transition: transform 0.3s;
   transform: scale(0.85);
@@ -219,60 +211,115 @@ section {
     display: none;
   }
 }
-.header .flex .navbar li a:hover:before, .header .flex .navbar li a:hover:after, .header .flex .navbar li a:focus:before, .header .flex .navbar li a:focus:after {
-  transform: scale(1);
-  background: #fcc42c;
-}
-.header .flex .navbar li a:hover:after, .header .flex .navbar li a:focus:after {
-  top: 0%;
-  opacity: 1;
-}
 .header .flex .navbar li a:hover:before, .header .flex .navbar li a:focus:before {
+  transform: scale(1);
+  background: #0773ca;
   bottom: 0%;
   opacity: 1;
 }
-.header .flex .navbar .btn {
-  display: inline;
-  color: #fff;
-  font-size: 1.7rem;
-  border-radius: 2rem;
-  background-color: #272727;
-  padding: 1rem 1.5rem;
-  font-family: "Cafe24Ssurround", serif;
+.header .flex .icons {
+  display: flex;
+  align-items: center;
+  gap: 2.7rem;
 }
-.header .flex .navbar .btn:hover {
-  background: #fcc42c;
-}
-@media (min-width: 350px) and (max-width: 767px) {
-  .header .flex .navbar .btn {
-    display: none;
-  }
-}
-.header .flex #menuBtn {
-  font-size: 2rem;
+.header .flex .icons i {
+  font-size: 1.8rem;
   color: #151515;
   cursor: pointer;
+}
+.header .flex .icons i:hover {
+  color: #0773ca;
+  font-weight: bold;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .header .flex .icons i {
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}
+.header .flex .icons #menuBtn {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #151515;
   display: none;
 }
 @media (min-width: 350px) and (max-width: 767px) {
-  .header .flex #menuBtn {
+  .header .flex .icons #menuBtn {
     display: inline-block;
-    font-size: 3rem;
+    color: #fff;
   }
-  .header .flex #menuBtn.fa-xmark {
+  .header .flex .icons #menuBtn.fa-xmark {
     transform: rotate(90deg);
   }
 }
 
+#search-form {
+  position: fixed;
+  top: -110%;
+  left: 0;
+  /* top -110% 해서 안보이게 함 */
+  height: 100%;
+  width: 100%;
+  z-index: 1004;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  #search-form {
+    padding: 0 5rem;
+  }
+}
+#search-form.active {
+  top: 0;
+}
+#search-form #search-box {
+  width: 50rem;
+  border-bottom: 0.1rem solid #fff;
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 2.2rem;
+  text-transform: none;
+  background: none;
+}
+#search-form #search-box::-moz-placeholder {
+  color: #eee;
+}
+#search-form #search-box::placeholder {
+  color: #eee;
+}
+#search-form #search-box::-webkit-scrollbar-button {
+  -webkit-appearance: none;
+}
+#search-form label {
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.2rem;
+}
+#search-form label:hover {
+  color: #fcc42c;
+}
+#search-form #close {
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  top: 2rem;
+  right: 3rem;
+  font-size: 3.5rem;
+}
+
+/* home */
 .home {
   position: relative;
   min-height: 100vh;
   align-content: center;
+  padding-top: 3rem;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .home {
     min-height: 80vh;
-    padding-top: 6rem;
   }
 }
 .home::before {
@@ -306,7 +353,7 @@ section {
   text-align: center;
 }
 .home .flex .img img {
-  height: 40rem;
+  height: 42rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -339,19 +386,20 @@ section {
 .best {
   text-align: center;
 }
-.best .btn_2 {
-  margin-top: 6rem;
+.best .btn {
+  margin-top: 4rem;
 }
 .best .menu_container {
   display: grid;
   grid-template-columns: repeat(auto-fit, 25rem);
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .best .menu_container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 .best .menu_container .box {
@@ -359,68 +407,80 @@ section {
   overflow: hidden;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-.best .menu_container .box img {
-  height: 15rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+.best .menu_container .box .image {
+  width: 100%;
+  position: relative;
+  background: url("../images/new_bg.jpg") no-repeat center/cover;
+  padding: 1rem;
+}
+.best .menu_container .box .image img {
+  width: 100%;
+  height: 20rem;
+  -o-object-fit: contain;
+     object-fit: contain;
   z-index: -1;
 }
-.best .menu_container .box h3 {
-  font-size: 1.7rem;
-  color: #151515;
-  text-align: center;
-  margin-top: 1rem;
+.best .menu_container .box .image img:hover {
+  transform: scale(1.1);
 }
-.best .menu_container .box .fa-heart,
-.best .menu_container .box .fa-thumbs-up {
+@media (min-width: 350px) and (max-width: 767px) {
+  .best .menu_container .box .image img {
+    height: 13rem;
+  }
+}
+.best .menu_container .box .image .fa-heart {
   position: absolute;
-  top: 1.5rem;
-  color: #fff;
-  height: 4rem;
-  width: 4rem;
-  font-size: 1.6rem;
-  line-height: 4rem;
+  bottom: 0.5rem;
+  right: 1rem;
+  color: #ccc;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
   border-radius: 50%;
   cursor: pointer;
-  background: #272727;
+  background: #fff;
   z-index: 1;
 }
-.best .menu_container .box .fa-heart {
-  right: -15rem;
+.best .menu_container .box .image .fa-heart:hover {
+  color: rgb(248, 152, 168);
 }
-.best .menu_container .box .fa-heart:hover {
-  background-color: #fcc42c;
+.best .menu_container .box .image span {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  display: inline-block;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  background: rgb(253, 20, 20);
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  line-height: 1.3;
 }
-.best .menu_container .box:hover .fa-heart {
-  right: 1.5rem;
+.best .menu_container .box h3 {
+  font-size: 1.6rem;
+  color: #151515;
+  text-align: left;
 }
-.best .menu_container .box .fa-thumbs-up {
-  left: -15rem;
-}
-.best .menu_container .box .fa-thumbs-up:hover {
-  background-color: #fcc42c;
-}
-.best .menu_container .box:hover .fa-thumbs-up {
-  left: 1.5rem;
-}
-.best .menu_container .box .price .under {
-  color: #adadad;
-  text-decoration: line-through;
-  font-size: 1.4rem;
-}
-.best .menu_container .box .price .sale {
+.best .menu_container .box .price {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
 }
-.best .menu_container .box .price .sale > span {
+.best .menu_container .box .price .sale {
   color: red;
   font-size: 1.6rem;
   font-weight: bold;
 }
-.best .menu_container .box .price .sale .sale_pr {
+.best .menu_container .box .price .sale_pr {
   color: #151515;
   font-size: 1.6rem;
   font-weight: bold;
@@ -428,14 +488,19 @@ section {
 
 .about {
   width: 100%;
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 .about .about_banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 5rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .about .about_banner {
+    gap: 3rem;
+  }
 }
 .about .about_banner .image {
   flex: 1 1 40rem;
@@ -448,19 +513,19 @@ section {
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .about .about_banner .image img {
-    height: 50rem;
+    height: 40rem;
   }
 }
 .about .about_banner .content {
   flex: 1 1 40rem;
-  padding: 3rem 6rem;
+  padding: 2rem;
 }
-.about .about_banner .content .btn_2 {
+.about .about_banner .content .btn {
   margin-top: 3rem;
 }
 .about .about_banner .content h2 {
-  font-size: 7rem;
-  color: #076ec1;
+  font-size: 5rem;
+  color: #0773ca;
   font-family: "Cafe24Ssurround", serif;
 }
 @media (min-width: 350px) and (max-width: 767px) {
@@ -468,78 +533,206 @@ section {
     font-size: 4.5rem;
   }
 }
-.about .about_banner .content > span {
-  font-size: 3.3rem;
+.about .about_banner .content .top_txt {
+  font-size: 2.6rem;
   color: #272727;
   font-family: "InkLipquid", serif;
   margin-bottom: 3rem;
 }
 @media (min-width: 350px) and (max-width: 767px) {
-  .about .about_banner .content > span {
+  .about .about_banner .content .top_txt {
     font-size: 2.5rem;
   }
 }
 .about .about_banner .content p {
   color: #151515;
-  font-size: 1.6rem;
-  line-height: 2;
+  font-size: 1.5rem;
+  line-height: 2.4;
   margin-top: 3rem;
 }
 .about .about_banner .content p span {
   color: #fcc42c;
   font-weight: bolder;
-  font-size: 3rem;
-  font-family: "InkLipquid", serif;
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.new {
+  text-align: center;
+}
+.new .btn {
+  margin-top: 4rem;
+}
+.new .menu_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .new .menu_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+.new .menu_container .box {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.new .menu_container .box .image {
+  width: 100%;
+  position: relative;
+  background: url("../images/wood2.jpg") no-repeat center/cover;
+  padding: 1rem;
+}
+.new .menu_container .box .image img {
+  width: 100%;
+  height: 20rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  z-index: -1;
+}
+.new .menu_container .box .image img:hover {
+  transform: scale(1.1);
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .new .menu_container .box .image img {
+    height: 13rem;
+  }
+}
+.new .menu_container .box .image .fa-heart {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  color: #ccc;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #fff;
+  z-index: 1;
+}
+.new .menu_container .box .image .fa-heart:hover {
+  color: rgb(248, 152, 168);
+}
+.new .menu_container .box .image span {
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  display: inline-block;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  background: #fcc42c;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  line-height: 1.3;
+}
+.new .menu_container .box h3 {
+  font-size: 1.6rem;
+  color: #151515;
+  text-align: left;
+}
+.new .menu_container .box p {
+  text-align: left;
+  font-size: 1.3rem;
+  color: #6b6b6b;
+}
+.new .menu_container .box .price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.new .menu_container .box .price .sale {
+  color: red;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.new .menu_container .box .price .sale_pr {
+  color: #151515;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.new .menu_container .box .price .sale_un {
+  color: #adadad;
+  font-size: 1.4rem;
+  text-decoration: line-through;
 }
 
 .order form {
   max-width: 90rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   border: 0.1rem solid rgba(154, 154, 154, 0.2);
   background: #fff;
-  padding: 1.5rem;
+  padding: 4rem 5rem;
   margin: 0 auto;
+  border-left: 5rem solid #fcc42c;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .order form {
+    padding: 2rem;
+    border-left: 2rem solid #fcc42c;
+  }
 }
 .order form .inputBox {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 .order form .inputBox .input {
-  width: 49%;
+  width: 48%;
 }
 .order form .inputBox .input span {
   display: block;
   padding: 1rem 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #151515;
+  font-family: "Cafe24Ssurround", serif;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .order form .inputBox .input span {
+    font-size: 1.4rem;
+  }
 }
 .order form .inputBox .input input,
 .order form .inputBox .input textarea {
-  background: #eee;
+  background: #f2f2f2;
   border-radius: 0.5rem;
   padding: 1rem;
-  font-size: 1.6rem;
-  color: #151515;
+  font-size: 1.4rem;
+  color: #272727;
   text-transform: none;
   margin-bottom: 1rem;
   width: 100%;
-}
-.order form .inputBox .input input:focus,
-.order form .inputBox .input textarea:focus {
-  border: 0.4rem solid #fcc42c;
+  font-family: "Pretendard-Regular", serif;
 }
 .order form .inputBox .input textarea {
   height: 20rem;
   resize: none;
 }
+@media (min-width: 350px) and (max-width: 767px) {
+  .order form .inputBox .input textarea {
+    height: 10rem;
+  }
+}
 .order .btn_box {
   text-align: center;
 }
-.order .btn_box .btn_2 {
-  margin-top: 0.6rem;
-  font-size: 2rem;
+.order .btn_box .btn {
+  margin-top: 1rem;
 }
 
 .reviews {
@@ -547,7 +740,7 @@ section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  margin-top: 7rem;
+  margin-top: 6rem;
   min-height: 70vh;
   display: flex;
   justify-content: center;
@@ -563,29 +756,34 @@ section {
 }
 .reviews .row .content {
   flex: 1 1 40rem;
-  padding: 2rem 2.5rem;
+  padding: 3rem;
   background-color: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 .reviews .row .content h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #151515;
   margin-bottom: 1.5rem;
   font-family: "Cafe24Ssurround", serif;
 }
 @media (min-width: 350px) and (max-width: 767px) {
   .reviews .row .content h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 .reviews .row .content p {
   line-height: 2;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #272727;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .reviews .row .content p {
+    font-size: 1.3rem;
+  }
 }
 .reviews .row .slider-container {
   flex: 1 1 40rem;
@@ -597,7 +795,7 @@ section {
   height: 100%;
   padding: 2rem 2.5rem;
   background-color: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -612,9 +810,14 @@ section {
 }
 .reviews .row .slider-container .slide p {
   line-height: 1.8;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #272727;
   animation: slide 0.4s 0.2s ease-out backwards;
+}
+@media (min-width: 350px) and (max-width: 767px) {
+  .reviews .row .slider-container .slide p {
+    font-size: 1.3rem;
+  }
 }
 .reviews .row .slider-container .slide .user {
   display: flex;
@@ -622,7 +825,7 @@ section {
   gap: 1.5rem;
   padding-top: 1.5rem;
   margin-top: 1.5rem;
-  border-top: 0.1rem solid #272727;
+  border-top: 0.1rem solid #adadad;
   animation: slide 0.4s 0.4s ease-out backwards;
 }
 .reviews .row .slider-container .slide .user img {
@@ -666,16 +869,7 @@ section {
   }
 }
 .footer {
-  background: #272727;
-  color: #fff;
-  text-align: center;
-  margin-top: 3rem;
-}
-.footer p {
-  font-size: 1.5rem;
-}
-
-.footer {
+  margin-top: 5rem;
   background-color: #272727;
 }
 .footer .flex {
@@ -694,12 +888,12 @@ section {
 }
 .footer .flex .logo {
   font-size: 2rem;
-  color: #fff;
+  color: #fcc42c;
   font-family: "Cafe24Ssurround", serif;
   font-size: 2rem;
 }
 .footer .flex .logo:hover {
-  color: #fcc42c;
+  color: #0773ca;
 }
 .footer .flex .links a {
   margin: 0 1rem;
@@ -722,6 +916,10 @@ section {
   color: #fff;
   font-size: 1.5rem;
   font-family: "Cafe24Ssurround", serif;
+  border-radius: 2rem;
+  border: 0.2rem solid #fff;
+  padding: 1rem 2rem;
+  line-height: 1.5rem;
 }
 .footer .flex .extra-link:hover {
   color: #fcc42c;

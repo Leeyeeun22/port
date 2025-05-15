@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style link -->
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="icon" type="images/png" href="images/logo.png">
     <title>포케포케</title>
 </head>
 
 <body>
     <!-- header -->
     <header class="header">
-
         <section class="flex">
             <a href="#" class="logo">pokepoke</a>
             <ul class="navbar">
@@ -21,19 +21,31 @@
                 <li><a href="#">칼로리</a></li>
                 <li><a href="#">매장위치</a></li>
                 <li><a href="#">소식</a></li>
-                <li><a class="last-li" href="#">가맹문의</a></li>
-                <a href="#" class="btn">가맹문의<i class="fa-solid fa-house"></i></a>
+                <li><a href="#">가맹문의</a></li>
             </ul>
 
-            <div id="menuBtn" class="fa-solid fa-bars"></div>
+            <div class="icons">
+                <i id="search-icons" class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-regular fa-user"></i>
+                <div id="menuBtn" class="fa-solid fa-bars"></div>
             </div>
+            </div>
+
     </header>
 
+    <!-- search form -->
+    <form action="" id="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- home -->
     <div class="home">
         <section class="flex">
             <div class="img">
                 <img src="images/poke_1.png" alt="">
-
             </div>
 
             <div class="content">
@@ -41,109 +53,245 @@
                 <h2>POKEPOKE</h2>
                 <p>싱싱한 재료들이 가득 들어있어 건강과 다이어트를 <br>한번에 해결할 수 있는
                     포케를 드셔보세요!</p>
-                <a href="#" class="btn_2">자세히 보기<i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="btn">자세히 보기<i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
     </div>
 
+    <!-- best -->
     <div class="best">
 
         <section>
-
             <div class="title">
-                <span>가장 인기 있는</span>
-                <h2><span>best</span> menu</h2>
+                <span>best</span>
+                <h2><span>인기</span> 메뉴</h2>
             </div>
 
             <div class="menu_container">
 
                 <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <i class="fa-solid fa-thumbs-up"></i>
-                    <img src="images/poke_2.png" alt="">
+                    <div class="image">
+                        <img src="images/poke_2.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>best</span>
+                    </div>
                     <h3>아보카도 연어 포케</h3>
+
                     <div class="price">
-                        <span class="under">13,000</span>
-                        <div class="sale">
-                            <span>20%</span>
-                            <span class="sale_pr">11,000</span>
-                        </div>
+                        <span class="sale">20%</span>
+                        <span class="sale_pr">12,000</span>
                     </div>
                 </div>
 
                 <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <i class="fa-solid fa-thumbs-up"></i> <img src="images/poke_3.png" alt="">
+                    <div class="image">
+                        <img src="images/poke_3.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>best</span>
+                    </div>
+
                     <h3>망고 연어 포케</h3>
                     <div class="price">
-                        <span class="under">13,000</span>
-                        <div class="sale">
-                            <span>20%</span>
-                            <span class="sale_pr">11,000</span>
-                        </div>
+                        <span class="sale">20%</span>
+                        <span class="sale_pr">11,000</span>
                     </div>
                 </div>
 
                 <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <i class="fa-solid fa-thumbs-up"></i> <img src="images/poke_4.png" alt="">
+                    <div class="image">
+                        <img src="images/poke_4.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>best</span>
+                    </div>
                     <h3>특대 연어 포케</h3>
                     <div class="price">
-                        <span class="under">13,000</span>
-                        <div class="sale">
-                            <span>20%</span>
-                            <span class="sale_pr">11,000</span>
-                        </div>
+                        <span class="sale">20%</span>
+                        <span class="sale_pr">14,000</span>
                     </div>
                 </div>
 
                 <div class="box">
-                    <a href="#" class="fas fa-heart"></a>
-                    <i class="fa-solid fa-thumbs-up"></i> <img src="images/poke_5.png" alt="">
+                    <div class="image">
+                        <img src="images/poke_5.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>best</span>
+                    </div>
                     <h3>오이 연어 포케</h3>
                     <div class="price">
-                        <span class="under">13,000</span>
-                        <div class="sale">
-                            <span>20%</span>
-                            <span class="sale_pr">11,000</span>
-                        </div>
+                        <span class="sale">20%</span>
+                        <span class="sale_pr">10,000</span>
                     </div>
                 </div>
             </div>
 
-            <div class="btn_2">더 보기<i class="fa-solid fa-arrow-right"></i></div>
-
+            <div class="btn">더 보기<i class="fa-solid fa-arrow-right"></i></div>
         </section>
     </div>
 
-
+    <!-- about -->
     <div class="about">
 
         <section>
-
 
             <div class="about_banner">
                 <div class="image">
                     <img src="images/about_banner.jpg" alt="">
                 </div>
                 <div class="content">
-                    <span>건강과 체중관리를 한번에</span>
+                    <span class="top_txt">건강과 체중관리를 한번에</span>
                     <h2>poke poke</h2>
                     <p><span>포케포케</span>는 신선하고 건강한 재료들만을 사용하여 맛과 영양이 풍부한 식사를 할 수 있으며 깔끔하고 편안한 공간을 제공하여 건강 뿐만 아니라 고객의 니즈를
                         끊임없이 추구하는 브랜드입니다. 건강과 고객의 새로운 즐거움을 찾아나가며, 항상 최선을 다하는 브랜드입니다.<br>
                     </p>
-                    <p><span>포케포케</span>는 항상 고객들의 만족을 최우선으로 생각 합니다. 따라서, 편안하고 즐거운 식사 경험을 제공하기 위해 최선을 다하고 있습니다. 우리는 고객들의
+
+                    <p><span>포케포케</span>는 항상 고객들의 만족을 최우선으로 생각 합니다. 따라서, 편안하고 즐거운 식사 경험을 제공하기 위해 최선을 다하고 있습니다. 우리는
+                        고객들의
                         의견을 소중히 여기고, 그에 따라 서비스 를 개선하며 고객들이 우리 브랜드를 신뢰하고 사랑할 수 있도록 끊임없이 노력합니다.</p>
-                    <div class="btn_2">브랜드소개<i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="btn">브랜드소개<i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
         </section>
     </div>
 
+    <!-- new -->
+    <div class="new">
+
+        <section>
+            <div class="title">
+                <span>new</span>
+                <h2><span>신상</span> 메뉴</h2>
+            </div>
+
+            <div class="menu_container">
+
+                <div class="box">
+                    <div class="image">
+                        <img src="images/new_1.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>[초특대] 비빔밥 포케</h3>
+                    <p>초특대 사이즈의 포케 출시!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">16,000</span>
+                        <span class="sale_pr">14,000</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="image">
+                        <img src="images/new_2.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>새우 당근 포케</h3>
+                    <p>싱싱한 새우와 당근이 만났다!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">14,000</span>
+                        <span class="sale_pr">12,000</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="image">
+                        <img src="images/new_3.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>[기간한정] 참치 포케</h3>
+                    <p>참치 본연의 맛을 느낄 수 있다</p>
+                    <div class="price">
+                        <span class="sale">30%</span>
+                        <span class="sale_un">16,000</span>
+                        <span class="sale_pr">13,000</span>
+                    </div>
+                </div>
+
+                                <div class="box">
+                    <div class="image">
+                        <img src="images/new_4.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>사과 새우 포케</h3>
+                    <p>사과와 새우가 만나면?!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">12,000</span>
+                        <span class="sale_pr">10,000</span>
+                    </div>
+                </div>
+
+                                <div class="box">
+                    <div class="image">
+                        <img src="images/poke_4.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>[특대] 오이 연어 포케</h3>
+                    <p>싱싱한 오이와 연어를 특대로!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">14,000</span>
+                        <span class="sale_pr">12,000</span>
+                    </div>
+                </div>
+
+                                <div class="box">
+                    <div class="image">
+                        <img src="images/poke_5.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>오이 연어 포케</h3>
+                    <p>싱싱한 오이와 연어가 만났다!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">14,000</span>
+                        <span class="sale_pr">12,000</span>
+                    </div>
+                </div>
+
+                                <div class="box">
+                    <div class="image">
+                        <img src="images/poke_6.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>비빔 연어 포케</h3>
+                    <p>비빔양념의 연어가 들어갔다</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">15,000</span>
+                        <span class="sale_pr">13,000</span>
+                    </div>
+                </div>
+
+                                <div class="box">
+                    <div class="image">
+                        <img src="images/poke_2.png" alt="">
+                        <a href="#" class="fas fa-heart"></a>
+                        <span>new</span>
+                    </div>
+                    <h3>아보카도 연어 포케</h3>
+                    <p>싱싱한 아보카도와 연어가 만났다!</p>
+                    <div class="price">
+                        <span class="sale">20%</span>
+                        <span class="sale_un">14,000</span>
+                        <span class="sale_pr">12,000</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn">더 보기<i class="fa-solid fa-arrow-right"></i></div>
+        </section>
+    </div>
 
     <!-- 리뷰 -->
     <div class="reviews">
-
         <section class="row">
 
             <div class="content">
@@ -175,7 +323,6 @@
                                 <div id="next" onclick='next()' class="fas fa-angle-right"></div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="slide">
@@ -213,7 +360,7 @@
                                     <i class="far fa-star"></i>
                                 </div>
                             </div>
-                                                        <div class="controls">
+                            <div class="controls">
                                 <div id="prev" onclick='prev()' class="fas fa-angle-left"></div>
                                 <div id="next" onclick='next()' class="fas fa-angle-right"></div>
                             </div>
@@ -234,7 +381,7 @@
                                     <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                                                        <div class="controls">
+                            <div class="controls">
                                 <div id="prev" onclick='prev()' class="fas fa-angle-left"></div>
                                 <div id="next" onclick='next()' class="fas fa-angle-right"></div>
                             </div>
@@ -242,10 +389,8 @@
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
-
 
     <!-- 가맹 문의 -->
     <section class="order" id="order">
@@ -294,43 +439,38 @@
             </div>
 
             <div class="btn_box">
-                <input type="submit" value="문의하기" class="btn_2">
+                <input type="submit" value="문의하기" class="btn">
             </div>
 
-
         </form>
-
     </section>
 
-
-        <footer class="footer">
+    <!-- footer -->
+    <footer class="footer">
         <section>
             <div class="flex">
 
                 <a href="#" class="logo">포케포케</a>
-
                 <nav class="links">
                     <a href="#home">브랜드소개</a>
                     <a href="#about">메뉴</a>
                     <a href="#options">칼로리</a>
                     <a href="#contact">매장위치</a>
                     <a href="#blogs">소식</a>
+                    <a href="#order">문의</a>
                 </nav>
-
-                <a href="#" class="extra-link btn">가맹문의
+                <a href="#" class="extra-link">가맹문의
                 </a>
-
             </div>
 
             <div class="credit">
                 <p>&copy; 2025 by <span>Leeyeeun</span> | all rights reserved</p>
-
                 <a href="https://www.freepik.com/">freepik</a>
-
             </div>
         </section>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
